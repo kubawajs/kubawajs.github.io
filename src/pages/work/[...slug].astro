@@ -33,7 +33,7 @@ const { Content } = await entry.render();
 			<header>
 				<div class="wrapper stack gap-2">
 					<a class="back-link" href="/work/"><Icon icon="arrow-left" /> Work</a>
-					<Hero title={entry.data.title} align="start">
+					<Hero title={entry.data.title} subtitle={entry.data.role} align="start">
 						<div class="details">
 							<div class="tags">
 								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
@@ -77,6 +77,7 @@ const { Content } = await entry.render();
 
 	.tags {
 		display: flex;
+		flex-flow: wrap;
 		gap: 0.5rem;
 	}
 

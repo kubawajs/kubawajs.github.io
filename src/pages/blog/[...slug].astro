@@ -32,6 +32,12 @@ const { Content } = await entry.render();
 	<div class="stack gap-20">
 		<div class="stack gap-15">
 			<header>
+				{
+					() => {
+						const bgImg = `background-image: url(${entry.data.img})`;
+						return (entry.data.img && <div class="header-image" style={bgImg} /></div>);
+					} 
+				}
 				<div class="wrapper stack gap-2">
 					<a class="back-link" href="/blog/"><Icon icon="arrow-left" /> blog</a>
 					<Hero title={entry.data.title} align="start">
@@ -46,7 +52,6 @@ const { Content } = await entry.render();
 			</header>
 			<main class="wrapper">
 				<div class="stack gap-10 content">
-					{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
 					<div class="content">
 						<Content />
 					</div>
@@ -84,6 +89,13 @@ const { Content } = await entry.render();
 		gap: 1.5rem;
 		justify-content: space-between;
 		align-items: center;
+	}
+
+	.header-image {
+		height: 30em;
+		overflow: hidden;
+		background-size: cover;
+		background-position: center;
 	}
 
 	.tags {

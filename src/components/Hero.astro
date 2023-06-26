@@ -2,15 +2,17 @@
 interface Props {
 	title: string;
 	tagline?: string;
+	subtitle?: string;
 	align?: 'start' | 'center';
 }
 
-const { align = 'center', tagline, title } = Astro.props;
+const { align = 'center', tagline, title, subtitle } = Astro.props;
 ---
 
 <header class:list={['hero stack gap-4', align]}>
 	<div class="stack gap-2">
 		<h1 class="title">{title}</h1>
+		{subtitle && <p>{subtitle}</p>}
 		{tagline && <p class="tagline">{tagline}</p>}
 	</div>
 	<slot />

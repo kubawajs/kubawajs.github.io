@@ -4,6 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 // Component Imports
 import CallToAction from '../components/CallToAction.astro';
+import Technologies from '../components/Technologies.astro';
 import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
 import Pill from '../components/Pill.astro';
@@ -28,8 +29,7 @@ import RecentPosts from '../components/RecentPosts.astro';
 					align="start"
 				>
 					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> .NET</Pill>
-						<Pill><Icon icon="microphone-stage" size="1.33em" /> Speaker</Pill>
+						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
 						<Pill><Icon icon="pencil-line" size="1.33em" /> Bloger</Pill>
 					</div>
 				</Hero>
@@ -38,15 +38,32 @@ import RecentPosts from '../components/RecentPosts.astro';
 					alt="Jakub Wajs smiling in sunglasses"
 					width="480"
 					height="620"
-					src="/assets/portrait.jpg"
+					src="/assets/portrait-2.JPG"
 				/>
 			</header>
 
 			<Skills />
 		</div>
 
+		<div class="wrapper">
+			<Technologies />
+		</div>
+
 		<main class="wrapper stack gap-20">
-			<section class="section with-background with-cta">
+			<section class="section three-cols-section with-background bg-variant">
+				<header class="section-header stack gap-2 lg:gap-4">
+					<h3>Latest posts</h3>
+					<p>
+						Visit my blog to read more.
+					</p>
+				</header>
+			
+				<div class="gallery">
+					<RecentPosts />
+				</div>
+			</section>
+
+			<!-- <section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
 					<h3>Projects</h3>
 					<p>Take a look below at some of my featured work for clients from the past few years.</p>
@@ -62,20 +79,7 @@ import RecentPosts from '../components/RecentPosts.astro';
 						<Icon icon="arrow-right" size="1.2em" />
 					</CallToAction>
 				</div>
-			</section>
-
-			<section class="section three-cols-section with-background bg-variant">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Latest posts</h3>
-					<p>
-						Visit my blog to read more.
-					</p>
-				</header>
-			
-				<div class="gallery">
-					<RecentPosts />
-				</div>
-			</section>
+			</section> -->
 
 		</main>
 
@@ -210,28 +214,6 @@ import RecentPosts from '../components/RecentPosts.astro';
 
 		.cta {
 			grid-area: cta;
-		}
-	}
-
-	/* ====================================================== */
-
-	.mention-card {
-		display: flex;
-		height: 7rem;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		border: 1px solid var(--gray-800);
-		border-radius: 1.5rem;
-		color: var(--gray-300);
-		background: var(--gradient-subtle);
-		box-shadow: var(--shadow-sm);
-	}
-
-	@media (min-width: 50em) {
-		.mention-card {
-			border-radius: 1.5rem;
-			height: 9.5rem;
 		}
 	}
 </style>

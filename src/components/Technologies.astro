@@ -1,0 +1,56 @@
+---
+
+import Grid from '../components/Grid.astro';
+import Icon from './Icon.astro';
+
+type Technology = {
+    name: string,
+    icon: string
+}
+
+const technologies = [ {name: '.NET', icon: 'dotnet'}, {name: 'C#', icon: 'csharp'}, {name: 'Azure', icon: 'azure'},  {name: 'Kentico', icon: 'kentico'},  {name: 'Optimizely', icon: 'optimizely'}];
+
+---
+
+<Grid variant="small">
+	{
+		technologies.map((technology) => {
+			const iconPath = `../../public/assets/icons/${technology.icon}.svg`;
+			const altText = `${technology.name} icon`;
+			return (
+				<li class="technology-card">
+					<span class="technology-icon">
+						<img src={iconPath} alt={altText} />
+					</span>
+				</li>
+			);
+		})
+	}
+</Grid>
+
+<style>
+	.technology-card {
+		height: auto;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+        font-size: var(--text-lg);
+		border-radius: 1.5rem;
+		color: var(--gray-300);
+	}
+
+    .technology-icon {
+		padding: 0.5rem;
+		font-size: 1rem;
+    }
+
+	.technology-icon img {
+		max-height: 5em;
+	}
+
+	@media (min-width: 50em) {
+		.technology-icon img {
+			max-height: 10em;
+		}
+	}
+</style>

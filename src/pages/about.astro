@@ -3,20 +3,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
+import Grid from '../components/Grid.astro';
+
+const technologiesAndSkills = ['.NET', '.NET Core', 'C#', 'Azure','JIRA', 'GIT', 'SCRUM', 'Azure DevOps', 'Kentico', 'Sitecore']
 ---
 
 <BaseLayout title="About | Jakub Wajs" description="About Jakub Wajs - .NET Developer">
 	<div class="stack gap-20">
 		<main class="wrapper about">
 			<Hero
-				title="About"
-				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+				title="About me"
+				tagline="Thanks for stopping by! Read below to learn more about myself and my background."
 			>
 				<img
 					width="1553"
 					height="873"
-					src="/assets/at-work.jpg"
-					alt="Jeanine White at work with a colleague"
+					src="/assets/about-me-photo.jpg"
+					alt="Jakub Wajs photo for about me page."
 				/>
 			</Hero>
 
@@ -24,35 +27,51 @@ import Hero from '../components/Hero.astro';
 				<h2 class="section-title">Background</h2>
 				<div class="content">
 					<p>
-						Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy.
-						Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum
-						id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla
-						pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
+						My name is Jakub and I’m 28 y.o. Software Engineer living in Poznan, Poland.
 					</p>
 					<p>
-						Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis
-						natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl
-						condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel
-						quam elementum pulvinar etiam non.
+						I started learning programming in 2015. Since then I've created many projects from various fields and tried a lot of technologies - from C++, through C# and Python to building web applications with Django and ASP .NET. Some of them can check on my GitHub repo.
 					</p>
 					<p>
-						Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet
-						eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra.
-						Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl
-						pretium fusce.
+						Most of my work during my BSc studies was related to the development of PyRy3D Chimera Extension (Python 2.x), which was also a subject of my BA thesis. In turn, during my Master's Degree, I dealt with the issue of cloud data warehouses based on the Microsoft Azure platform.
+					</p>
+					<p>
+						In 2019, I received the MCSA: Web Applications and MCSD: App Builder certificates. In 2022 I passed the Azure Developer Associate certification. Now I'm working as a .NET developer focused on building solutions driven by CMS technologies (Sitecore Experience Platform and Sitecore Content Hub, Kentico Xperience, or Optimizely CMS).
 					</p>
 				</div>
 			</section>
 			<section>
-				<h2 class="section-title">Education</h2>
+				<h2 class="section-title">Technology stack</h2>
 				<div class="content">
-					<p>Corporis voluptates tenetur laudantium.</p>
+					<Grid variant='small'>
+						{
+							technologiesAndSkills.map((skill) => (
+								<li>{skill}</li>
+							))
+						}
+					</Grid>
 				</div>
 			</section>
 			<section>
-				<h2 class="section-title">Skills</h2>
+				<h2 class="section-title">Certificates</h2>
 				<div class="content">
-					<p>officia unde omnis</p>
+					<Grid variant="small">
+						<li class="certificate-item">
+							<a href="https://www.credly.com/badges/51599b8f-b0d1-45ea-bffc-8cc28b84a40e/linked_in_profile">
+								<img src="../../public/assets/certificates/certificate-azure-associate.png" alt="Microsoft Certified: Azure Developer Associate badge">
+							</a>
+						</li>
+						<li class="certificate-item">
+							<a href="https://www.credly.com/badges/a860e5de-5e5a-4c17-80d9-805821166a7f/linked_in_profile">
+								<img src="../../public/assets/certificates/certificate-app-builder.png" alt="Microsoft Certified Solutions Developer badge">
+							</a>
+						</li>
+						<li class="certificate-item">
+							<a href="https://www.credly.com/badges/ce4b4c68-59df-405c-89a2-76ec658f2151/linked_in_profile">
+								<img src="../../public/assets/certificates/certificate-solutions-associate.png" alt="Microsoft Certified Solutions Associate badge">
+							</a>
+						</li>
+					</Grid>
 				</div>
 			</section>
 		</main>
@@ -100,6 +119,10 @@ import Hero from '../components/Hero.astro';
 	.content :global(a:hover),
 	.content :global(a:focus) {
 		text-decoration-color: currentColor;
+	}
+
+	.content p {
+		margin-bottom: 1.5em;
 	}
 
 	@media (min-width: 50em) {

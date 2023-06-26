@@ -1,6 +1,7 @@
 ---
 title: Minimal API in .NET 7 - Tips & Tricks
 publishDate: 2023-01-16 00:00:00
+description: Minimal API is the new, simplified approach for building APIs in .NET, which is faster and requires minimal code and configuration. Below you can find a set of tips & tricks you may find useful while starting your journey with Minimal API or transforming your existing API from a controller approach into minimal.
 img: '/assets/images/2023/01/minimal-api-in-net-7-tips-tricks/images/image.png'
 tags: 
   - "net"

@@ -22,6 +22,7 @@ const { variant } = Astro.props;
 	.grid.small {
 		grid-template-columns: 1fr 1fr;
 		gap: 1.5rem;
+		align-items: center;
 	}
 
 	/* If last row contains only one item, make it span both columns. */
@@ -58,7 +59,6 @@ const { variant } = Astro.props;
 
 		.grid.small {
 			display: flex;
-			flex-wrap: wrap;
 			justify-content: center;
 			gap: 2rem;
 		}
