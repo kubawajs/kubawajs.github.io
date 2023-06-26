@@ -1,9 +1,8 @@
 ---
 title: Furniture company in Austria
 role: Lead Kentico Developer
+category: Commercial
 publishDate: 2021-01-01 00:00:00
-img: /assets/stock-1.jpg
-img_alt: Iridescent ripples of a bright blue and pink liquid
 description: |
   Implementation of two brand websites with a shared codebase on Kentico 13 CMS.
 tags:

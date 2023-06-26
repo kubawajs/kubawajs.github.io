@@ -1,9 +1,8 @@
 ---
 title: Coffee and tea retailer company in Austria
 role: Lead Kentico Developer
+category: Commercial
 publishDate: 2022-08-01 00:00:00
-img: /assets/stock-2.jpg
-img_alt: Test alt
 description: |
   Maintenance and development of new features on the brand website.
 tags:

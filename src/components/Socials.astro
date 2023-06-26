@@ -1,0 +1,34 @@
+---
+import Icon, { Props as IconProps } from './Icon.astro';
+
+const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
+	{ label: 'Twitter', href: 'https://twitter.com/wajs_kuba', icon: 'twitter-logo' },
+	{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/jakub-wajs/', icon: 'linkedin-logo' },
+	{ label: 'GitHub', href: 'https://github.com/kubawajs', icon: 'github-logo' },
+	// { label: 'YouTube', href: 'https://www.youtube.com/@codewithkuba', icon: 'youtube-logo' },
+];
+---
+
+{
+    iconLinks.map(({ href, icon, label }) => (
+        <a href={href} class="social">
+            <span class="sr-only">{label}</span>
+            <Icon icon={icon} />
+        </a>
+    ))
+}
+
+<style>
+    .social {
+		display: flex;
+		padding: var(--icon-padding);
+		text-decoration: none;
+		color: var(--accent-dark);
+		transition: color var(--theme-transition);
+	}
+
+	.social:hover,
+	.social:focus {
+		color: var(--gray-0);
+	}
+</style>

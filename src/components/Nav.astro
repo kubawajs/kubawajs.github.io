@@ -1,6 +1,7 @@
 ---
-import Icon, { Props as IconProps } from './Icon.astro';
+import Icon from './Icon.astro';
 import ThemeToggle from './ThemeToggle.astro';
+import Socials from '../components/Socials.astro';
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
@@ -8,14 +9,6 @@ const textLinks: { label: string; href: string }[] = [
 	{ label: 'Blog', href: '/blog/' },
 	// { label: 'Work', href: '/work/' },
 	{ label: 'About', href: '/about/' },
-];
-
-/** Icon links to social media — edit these with links to your profiles! */
-const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
-	{ label: 'Twitter', href: 'https://twitter.com/wajs_kuba', icon: 'twitter-logo' },
-	{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/jakub-wajs/', icon: 'linkedin-logo' },
-	{ label: 'GitHub', href: 'https://github.com/kubawajs', icon: 'github-logo' },
-	{ label: 'YouTube', href: 'https://www.youtube.com/@codewithkuba', icon: 'youtube-logo' },
 ];
 ---
 
@@ -59,14 +52,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 		</ul>
 		<div class="menu-footer">
 			<div class="socials">
-				{
-					iconLinks.map(({ href, icon, label }) => (
-						<a href={href} class="social">
-							<span class="sr-only">{label}</span>
-							<Icon icon={icon} />
-						</a>
-					))
-				}
+    			<Socials />
 			</div>
 
 			<div class="theme-toggle">
@@ -143,15 +129,13 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 		border-radius: 999rem;
 		padding: 0.5rem;
 		font-size: 1.5rem;
-		color: var(--gray-300);
-		background: radial-gradient(var(--gray-900), var(--gray-800) 150%);
-		box-shadow: var(--shadow-md);
+		color: var(--gray-100);
+		background: var(--gray-999);
 	}
 
 	.menu-button[aria-expanded='true'] {
 		color: var(--gray-0);
-		background: linear-gradient(180deg, var(--gray-600), transparent),
-			radial-gradient(var(--gray-900), var(--gray-800) 150%);
+		background: var(--gray-800);
 	}
 
 	.menu-button[hidden] {
@@ -182,6 +166,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 		line-height: 1.2;
 		list-style: none;
 		padding: 2rem;
+		background-color: var(--gray-999);
 	}
 
 	.link {
@@ -207,30 +192,17 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 		box-shadow: var(--shadow-lg);
 	}
 
+	.theme-toggle {
+		display: flex;
+		align-items: center;
+		height: calc(var(--icon-size) + 2 * var(--icon-padding));
+	}
+
 	.socials {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.625rem;
 		font-size: var(--icon-size);
-	}
-
-	.social {
-		display: flex;
-		padding: var(--icon-padding);
-		text-decoration: none;
-		color: var(--accent-dark);
-		transition: color var(--theme-transition);
-	}
-
-	.social:hover,
-	.social:focus {
-		color: var(--accent-text-over);
-	}
-
-	.theme-toggle {
-		display: flex;
-		align-items: center;
-		height: calc(var(--icon-size) + 2 * var(--icon-padding));
 	}
 
 	@media (min-width: 50em) {
@@ -248,6 +220,10 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 
 		.site-title {
 			font-size: var(--text-lg);
+		}
+
+		.socials {
+			display: none;
 		}
 
 		#menu-content {

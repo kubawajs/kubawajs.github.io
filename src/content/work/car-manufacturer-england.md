@@ -1,9 +1,8 @@
 ---
 title: British manufacturer of luxury sports cars and grand tourers
 role: Sitecore Developer
+category: Commercial
 publishDate: 2020-02-01 00:00:00
-img: /assets/stock-2.jpg
-img_alt: Test alt
 description: |
   Transfer of 2 brand websites from Sitefinity CMS to Sitecore CMS including full website redesign.
 tags:

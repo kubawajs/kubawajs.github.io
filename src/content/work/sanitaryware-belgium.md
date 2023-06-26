@@ -1,9 +1,8 @@
 ---
 title: Sanitaryware, heating and plumbing supplies company in Belgium
 role: Kentico Developer
+category: Commercial
 publishDate: 2022-08-01 00:00:00
-img: /assets/stock-4.jpg
-img_alt: Soft pink and baby blue water ripples together in a subtle texture.
 description: |
   Extending the existing Kentico 13 CMS website with a new module: digital representation of stands in company stores.
 tags:

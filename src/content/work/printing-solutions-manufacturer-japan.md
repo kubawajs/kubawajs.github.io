@@ -1,9 +1,8 @@
 ---
 title: Japanese manufacturer of printing solutions
 role: Kentico Developer
+category: Commercial
 publishDate: 2021-10-01 00:00:00
-img: /assets/stock-2.jpg
-img_alt: Test alt
 description: |
   Maintenance of the existing website relaunched on Kentico CMS across 33 countries.
 tags:
