@@ -1,5 +1,5 @@
 ---
-title: \"Sign in with Apple\" in Kentico 13 website with .NET 4.8, OWIN, and OpenId
+title: "\"Sign in with Apple\" in Kentico 13 website with .NET 4.8, OWIN, and OpenId"
 description: Sign-in/up with… has become a ubiquitous authentication method for most modern websites. In this blog post, I guide you through the process of integrating your Apple ID registration/login into your Kentico 13 CMS website.
 publishDate: 2023-05-02 00:00:00
 img: '/assets/images/2023/05/sign-in-with-apple-in-kentico-13-website-with-net-4-8-owin-and-openid/images/xiong-yan-lwaw_dl09s4-unsplash.jpg'
