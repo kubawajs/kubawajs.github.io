@@ -100,7 +100,9 @@ const { Content } = await entry.render();
 
 	.tags {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 0.5rem;
+		justify-content: center;
 	}
 
 	.description {
@@ -109,6 +111,7 @@ const { Content } = await entry.render();
 	}
 
 	.content {
+		display: grid;
 		max-width: 65ch;
 		margin-inline: auto;
 	}
