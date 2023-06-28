@@ -19,15 +19,13 @@ _[In the previous post](https://jakubwajs.wordpress.com/2017/06/06/angular-for-p
 
 _During the work on the project we'll be guided by the MVP principle (Minimum Viable Project). This means that the application built by us has to have a minimum of functions, but enough to answer the question whether customers are interested in it and give tips on further development._
 
-[caption id="attachment_2491" align="alignnone" width="828"]![mvp](/assets/images/2018/01/web-api-in-net-core-project-5/images/mvp.png) [źródło/source](http://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp)[/caption]
+![mvp](/assets/images/2018/01/web-api-in-net-core-project-5/images/mvp.png) [źródło/source](http://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp)[/caption]
 
 W dzisiejszym poście przedstawię, w jaki sposób zbudować bardzo proste API w technologii .NET Core (o której pisałem [tutaj](https://jakubwajs.wordpress.com/2017/09/09/creating-net-core-mvc-application/)), składające się z jednego modelu oraz kontrolera. API będzie zwracało dane w formacie JSON, czyli zgodnym z formatem używanym w Angularowym module przygotowanym poprzednio.
 
 * * *
 
 _In today's post I'll present how to built simple API in .NET Core (more about framework [here](https://jakubwajs.wordpress.com/2017/09/09/creating-net-core-mvc-application/)), consisting of one model and controller. The API will return data in JSON format, which is compatible with the format used in the Angular module prepared previously._ 
-
- 
 
 ## Przygotowanie projektu / _Preparing the project_
 
