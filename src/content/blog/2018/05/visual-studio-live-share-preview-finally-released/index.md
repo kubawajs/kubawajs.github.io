@@ -1,6 +1,6 @@
 ---
-title: "Visual Studio Live Share Preview finally released!"
-description: ""
+title: Visual Studio Live Share Preview finally released!
+description: Streamline collaboration and bug fixing with Microsoft's Live Share, a game-changing feature recently introduced in their flagship IDE.
 publishDate: 2018-05-14T00:00:00Z
 tags: 
   - "net-core"

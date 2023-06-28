@@ -1,6 +1,6 @@
 ---
 title: Machine Learning in .NET? Introducing ML.NET
-description: 
+description: Discover Microsoft's ML.NET, a powerful machine learning tool, as it expands the capabilities of their flagship platform to empower developers in leveraging data-driven insights.
 publishDate: 2018-09-26T00:00:00Z
 tags:
   - "machine-learning"

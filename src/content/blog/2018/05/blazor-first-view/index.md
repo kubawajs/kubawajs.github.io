@@ -1,6 +1,6 @@
 ---
 title: Blazor - first view
-description: ""
+description: Discover the paradigm-shifting potential of Blazor, a revolutionary framework leveraging WebAssemblies to enable frontend development with C#. Explore how this innovative approach can reshape the role of JavaScript by empowering developers to build robust web applications using C# for both frontend and backend.
 publishDate: 2018-05-31T00:00:00Z
 tags: 
   - "net"
@@ -18,7 +18,7 @@ img_alt: ""
 
 **_In the era of dynamically developing, ever newer frameworks, the role of JavaScript in frontend programming seems unquestionable. With the introduction of WebAssemblies, however, a new, revolutionary concept appears - Blazor, which can significantly affect the position of this programming language. Soon, it will be possible to write large web applications using C# on both the front and backend._**
 
-[caption id="attachment_2506" align="aligncenter" width="1920"\]![Blazor-counter.png](images/blazor-counter.png) App from example Blazor template.[/caption]
+[caption id="attachment_2506" align="aligncenter" width="1920"]![Blazor-counter.png](images/blazor-counter.png) App from example Blazor template.[/caption]
 
 ### WebAssembly zmienia zasady / WebAssembly change rules
 

@@ -1,6 +1,6 @@
 ---
 title: "Web API in .NET Core - Project #5"
-description: ""
+description: Build your first Web API with this .NET Core tutorial.
 publishDate: 2018-01-14T00:00:00Z
 tags: 
   - "net-core"
@@ -19,7 +19,7 @@ _[In the previous post](https://jakubwajs.wordpress.com/2017/06/06/angular-for-p
 
 _During the work on the project we'll be guided by the MVP principle (Minimum Viable Project). This means that the application built by us has to have a minimum of functions, but enough to answer the question whether customers are interested in it and give tips on further development._
 
-[caption id="attachment_2491" align="alignnone" width="828"]![mvp](images/mvp.png) [źródło/source](http://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp)[/caption]
+[caption id="attachment_2491" align="alignnone" width="828"]![mvp](/assets/images/2018/01/web-api-in-net-core-project-5/images/mvp.png) [źródło/source](http://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp)[/caption]
 
 W dzisiejszym poście przedstawię, w jaki sposób zbudować bardzo proste API w technologii .NET Core (o której pisałem [tutaj](https://jakubwajs.wordpress.com/2017/09/09/creating-net-core-mvc-application/)), składające się z jednego modelu oraz kontrolera. API będzie zwracało dane w formacie JSON, czyli zgodnym z formatem używanym w Angularowym module przygotowanym poprzednio.
 
@@ -37,7 +37,7 @@ W pracach nad backendem aplikacji będziemy korzystać z [Visual Studio Communit
 
 _During the work on the backend part of our app, we'll use [Visual Studio Community 2017](https://www.visualstudio.com/pl/downloads/) and .NET Core version 2.0. The first step is to create new project (_File -> New -> Project_). VS has built-in sample templates for the .NET Core applications. Choose set of ASP .NET Web Application templates from first menu. In the next window we mark the_ Web API_._
 
-![new-web-api](images/new-project.png)
+![new-web-api](/assets/images/2018/01/web-api-in-net-core-project-5/images/new-project.png)
 
 Visual Studio utworzył za nas całą strukturę "gotowej" aplikacji wraz z przykładowym kontrolerem. O tym, że API już w tak okrojonej formie jest zdatne do użytku możemy się przekonać kompilując kod (_Ctrl+F5_). Przeglądarka powinna automatycznie przekierować nas pod adres domyślnego kontrolera w API.
 
@@ -53,7 +53,7 @@ W dzisiejszym poście przygotujemy pierwszą z funkcji API, której zadaniem bę
 
 _In today's post we'll prepare the first API function that will return data in JSON. We start by creating data model. Inside the project, we create a new folder called_ Models _and add a new_ PostedLink _class in it (_RMC -> Add -> Class_). It will represent a single entry (link) added by the user. We create appropriate properties in it: ID, title, url, description and number of votes (author and list of comments are skipping for now)._
 
-![class-posted-link](images/class.png)
+![class-posted-link](/assets/images/2018/01/web-api-in-net-core-project-5/images/class.png)
 
 Rzeczy, które chcemy wykonać później, możemy oznaczyć komentarzem _TODO._
 Będą one widoczne w zakładce _Task List_ (Ctrl+W, T).
@@ -69,7 +69,7 @@ Kolejnym krokiem będzie utworzenie kontekstu bazy danych - głównej klasy, kt�
 
 _The next step will be to create a database context - the main class that manages the functionalities for a given data model in Entity Framework Core that we'll use. The context is created by inheriting from the_ DbContext _class, which belongs to the Entity framework. Next, we create an empty contructor and_ DbSet PostedLinks _- an object that represents table in database, containing all the links added._
 
-![dbcontext](images/dbcontext.png)
+![dbcontext](/assets/images/2018/01/web-api-in-net-core-project-5/images/dbcontext.png)
 
 Przygotowany kontekst należy następnie zarejestrować. Oznacza to, że należy wstrzyknąć go do kontenera zależności (ang. _Dependency injection container_), a dokładniej metody _ConfigureServices_ w pliku _Startup.cs_. Dzięki temu będzie on dostępny do wykorzystania w kontrolerze, który napiszemy w kolejnym kroku.
 
@@ -91,7 +91,7 @@ _Controller is responsible for communication between data layer and user interfa
 
 _At this moment, our data source will be hardcoded inside our controller constructor. Ultimately, the data will be downloaded from the database._
 
-![controller](images/controller.png)
+![controller](/assets/images/2018/01/web-api-in-net-core-project-5/images/controller.png)
 
 Pora zaimplementować wspomniane wcześniej metody. _GetAll_ jest bardzo prostą metodą - parsuje dane o postach pobrane z kontekstu do zwykłej listy. Dane zwracane są w postaci JSONa.
 
@@ -146,7 +146,7 @@ _In_ HttpGet _attribute,_ GetById _method has been added with the entry_ _"{
 
 _The default action of our controller is_ GetAll_. From this reason we didn't define additional routing for it. It's available under the url given before the class definition - /api/postedlinks.
 
-![GetById](images/getbyid-e1515796883529.png)
+![GetById](/assets/images/2018/01/web-api-in-net-core-project-5/images/getbyid-e1515796883529.png)
 
 ## Podsumowanie / _Summary_
 
