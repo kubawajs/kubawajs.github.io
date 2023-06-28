@@ -13,7 +13,7 @@ tags:
   - "google-custom-search"
 ---
 
-Search option is an important part of every website. Building an appropriate algorithm on your own and adjusting it to the client's requirements is very time-consuming and expensive, and the results obtained are not always satisfactory. Fortunately, there are ready-made solutions on the market, such as Programmable Search Engine from Google. In this article, I will show how to build our own search engine and integrate it into .NET 6 minimal API.
+**Search option is an important part of every website. Building an appropriate algorithm on your own and adjusting it to the client's requirements is very time-consuming and expensive, and the results obtained are not always satisfactory. Fortunately, there are ready-made solutions on the market, such as Programmable Search Engine from Google. In this article, I will show how to build our own search engine and integrate it into .NET 6 minimal API.**
 
 #### Technologies used:
 

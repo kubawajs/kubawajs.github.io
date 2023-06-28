@@ -31,7 +31,7 @@ User creation window - Sitecore XP User Manager.
 Sitecore PowerShell Extensions has its own dedicated config file which you can find here:
 
 ```shell
-your\_instance\_folder/App\_Config/Include/SPE/SPE.config
+your_instance_folder/App_Config/Include/SPE/SPE.config
 ```
 
 You can enable remoting by changing _enabled_ attribute value of _remoting_ setting to _true._ I do not recommend this. With this approach, you cannot track the history of changes to the file and you will irretrievably lose the way config looked originally. I propose preparing patch file in your VS solution folder instead.
@@ -80,10 +80,10 @@ After completing the above steps, it's time to test your solution. Here's a samp
 ```shell
 # Parameters declaration
 param(
-    \[string\]$url,
-    \[string\]$SiteName,
-    \[string\]$SitecoreUser,
-    \[string\]$SitecorePass
+    [string]$url,
+    [string]$SiteName,
+    [string]$SitecoreUser,
+    [string]$SitecorePass
 )
 
 # Import SPE module

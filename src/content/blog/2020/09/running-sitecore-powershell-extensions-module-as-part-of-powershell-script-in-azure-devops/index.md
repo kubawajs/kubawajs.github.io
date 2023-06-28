@@ -33,9 +33,9 @@ Below you can find an example script that takes environment url, sitecore userna
 
 ```shell
 param(
-	\[string\]$url,
-	\[string\]$SitecoreUser,
-	\[string\]$SitecorePass
+	[string]$url,
+  [string]$SitecoreUser,
+	[string]$SitecorePass
 )
 
 $ScriptPath = Split-Path $MyInvocation.MyCommand.Path
@@ -44,7 +44,9 @@ Write-Host "Starting script..."
 ```
 
 # Log into Sitecore
+```shell
 $session = New-ScriptSession -Username $SitecoreUser -Password $SitecorePass -ConnectionUri $url
+```
 
 The script should be stored in the repository that is imported during build. The SPE module should be a subfolder of the script folder (like the path specified in the script).
 
