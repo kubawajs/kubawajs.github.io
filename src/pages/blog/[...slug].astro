@@ -53,6 +53,7 @@ const { Content } = await entry.render();
 			<main class="wrapper">
 				<div class="stack gap-10 content">
 					<div class="content">
+						<p><i>Posted: {entry.data.publishDate.toLocaleDateString("en-US")}</i></p>
 						<Content />
 					</div>
 				</div>
