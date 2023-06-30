@@ -1,6 +1,7 @@
 ---
 
 import Grid from '../components/Grid.astro';
+import Icon from './Icon.astro';
 
 type Technology = {
     name: string,
@@ -12,19 +13,31 @@ const technologies = [ {name: '.NET', icon: 'dotnet'}, {name: 'C#', icon: 'cshar
 ---
 
 <Grid variant="small">
-	{
-		technologies.map((technology) => {
-			const iconPath = `/assets/icons/${technology.icon}.svg`;
-			const altText = `${technology.name} icon`;
-			return (
-				<li class="technology-card">
-					<span class="technology-icon">
-						<img src={iconPath} alt={altText} />
-					</span>
-				</li>
-			);
-		})
-	}
+	<li class="technology-card">
+		<span class="technology-icon">
+			<Icon icon="dotnet" viewBox='0 0 256 256' width='256' height='256' color='none' />
+		</span>
+	</li>
+	<li class="technology-card">
+		<span class="technology-icon">
+			<Icon icon="csharp" viewBox='0 0 128 128' width='128' height='128' color='none' />
+		</span>
+	</li>
+	<li class="technology-card">
+		<span class="technology-icon">
+			<Icon icon="azure" viewBox='0 0 128 128' width='128' height='128' color='none' />
+		</span>
+	</li>
+	<li class="technology-card">
+		<span class="technology-icon">
+			<Icon icon="kentico" viewBox='0 0 24 24' width='24' height='24' color='none' />
+		</span>
+	</li>
+	<li class="technology-card">
+		<span class="technology-icon">
+			<Icon icon="optimizely" viewBox='0 0 256 248' width='256' height='248' color='none' />
+		</span>
+	</li>
 </Grid>
 
 <style>
@@ -34,22 +47,18 @@ const technologies = [ {name: '.NET', icon: 'dotnet'}, {name: 'C#', icon: 'cshar
 		align-items: center;
 		text-align: center;
         font-size: var(--text-lg);
-		border-radius: 1.5rem;
-		color: var(--gray-300);
+		color: var(--gray-100);
 	}
 
     .technology-icon {
-		padding: 0.5rem;
-		font-size: 1rem;
+		padding: 0.25rem;
+		font-size: 4rem;
     }
 
-	.technology-icon img {
-		max-height: 5em;
-	}
-
 	@media (min-width: 50em) {
-		.technology-icon img {
-			max-height: 10em;
+		.technology-icon {
+			padding: 0.5rem;
+			font-size: 6rem;
 		}
 	}
 </style>
