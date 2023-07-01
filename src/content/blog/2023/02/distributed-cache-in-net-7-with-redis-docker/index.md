@@ -3,7 +3,7 @@ title: Distributed cache in .NET 7 with redis & docker
 description: Distributed caching is an effective technique for improving the performance and scalability of .NET web applications. In this blog post, I show how to set up a distributed cache in .NET 7 using Redis and Docker.
 publishDate: 2023-02-23 00:00:00
 img: '/assets/images/2023/02/distributed-cache-in-net-7-with-redis-docker/images/ian-taylor-joqjbvo1p9g-unsplash.jpg'
-img_alt: 'Image post 2'
+img_alt: Photo of ship on the sea loaded with containers.
 tags: 
   - "net7"
   - "docker"
@@ -33,13 +33,13 @@ app.MapGet("/api/cache", () =>
 
 This endpoint will return the time of the generated response. As you can check in your browser, currently endpoint returns different times on each request.
 
-![](https://jakubwajs.files.wordpress.com/2023/02/image-1.png?w=832)
+![Screenshot of the browser with the endpoint result presented. Response time: 22.02.2023 22:23:13.](/assets/images/2023/02/distributed-cache-in-net-7-with-redis-docker/images/image-1.png?w=832)
 
 ## Package installation
 
 Now it's time to install the packages required for distributed caching and Redis. We need only one - **Microsoft.Extensions.Caching.StackExchangeRedis**.
 
-![](https://jakubwajs.files.wordpress.com/2023/02/image-2.png?w=650)
+![Screenshot from Nuget package manager with Microsoft.Extensions.Caching.StackExchangeRedis package selected.](/assets/images/2023/02/distributed-cache-in-net-7-with-redis-docker/images/image-2.png?w=650)
 
 Register it with the built-in extension method in _Program.cs_:
 
@@ -54,15 +54,15 @@ This code retrieves the connection string to Redis from _appsettings.json_. We'l
 
 Now it's time to set up our Docker containers for API and Redis. Start by clicking with RMB on the project in Visual Studio. Choose _Add_ and then _Container Orchestrator Support_.
 
-![](https://jakubwajs.files.wordpress.com/2023/02/image-3.png?w=680)
+![Picture with Visual Studio with Container Orchestrator Support option opened.](/assets/images/2023/02/distributed-cache-in-net-7-with-redis-docker/images/image-3.png?w=680)
 
 Next select _Docker Compose_ with Linux as the target OS.
 
-![](https://jakubwajs.files.wordpress.com/2023/02/image-4.png?w=415)
+![Picture with Add Container Orchestrator Support window with Docker Compose option selected.](/assets/images/2023/02/distributed-cache-in-net-7-with-redis-docker/images/image-4.png?w=415)
 
 Visual Studio will automatically generate Dockerfile for your API and Docker Compose file. Half of the work is done without any effort ;)
 
-![](https://jakubwajs.files.wordpress.com/2023/02/image-5.png?w=1024)
+![Picture with generated Docker compose file.](/assets/images/2023/02/distributed-cache-in-net-7-with-redis-docker/images/image-5.png?w=1024)
 
 Let's edit the compose file. The missing part is our Redis container. The code presented below will pull the latest image from the Docker registry and will use the local folder to store data (_volumes_ section) so that the data contained in it will not be deleted when the container is removed. I've added also the dependency on the API container so we'll be sure that the cache container is always initialized first.
 
@@ -118,7 +118,7 @@ app.MapGet("/api/cache", async (IDistributedCache cache) =>
 
 Now let's check in the browser if all our assumptions were correct. For the first request, the result is the same as before. But the next requests are returned from the cache.
 
-![](https://jakubwajs.files.wordpress.com/2023/02/image-6.png?w=513)
+![Screenshot of the browser with the endpoint result presented. FROM CACHE: Response time: 22.02.2023 22:25:52.](/assets/images/2023/02/distributed-cache-in-net-7-with-redis-docker/images/image-6.png?w=513)
 
 ## Caching objects
 

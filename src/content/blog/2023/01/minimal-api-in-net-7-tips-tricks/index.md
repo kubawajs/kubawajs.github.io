@@ -3,6 +3,7 @@ title: Minimal API in .NET 7 - Tips & Tricks
 publishDate: 2023-01-16 00:00:00
 description: Minimal API is the new, simplified approach for building APIs in .NET, which is faster and requires minimal code and configuration. Below you can find a set of tips & tricks you may find useful while starting your journey with Minimal API or transforming your existing API from a controller approach into minimal.
 img: '/assets/images/2023/01/minimal-api-in-net-7-tips-tricks/images/image.png'
+img_alt: Picture of the browser with hello world text displayed.
 tags: 
   - "net"
   - "net7"
@@ -32,7 +33,7 @@ The code string defines the routing part, so the path where your endpoint is acc
 
 Lambda is the function that will be triggered when the endpoint is accessed. Simply - if you access the path _/hello_ in your browser, you will see the _hello world!_ text.
 
-![](https://jakubwajs.files.wordpress.com/2023/01/image.png?w=481)
+![Picture of the browser with hello world text displayed.](/assets/images/2023/01/minimal-api-in-net-7-tips-tricks/images/image.png?w=481)
 
 We can extend this endpoint by adding the parameter to the request. Just add it as a lambda parameter in your code:
 
@@ -40,7 +41,7 @@ We can extend this endpoint by adding the parameter to the request. Just add it 
 app.MapGet("hello", (string name) => $"hello {name}!");
 ```
 
-![](https://jakubwajs.files.wordpress.com/2023/01/image-2.png?w=459)
+![Picture of the browser with hello Kuba text displayed.](/assets/images/2023/01/minimal-api-in-net-7-tips-tricks/images/image-2.png?w=459)
 
 But what if the user does not provide the parameter? Of course, we would like to return an error code. For this purpose, use the static _Results_ class with the corresponding error code, like in the example below:
 
@@ -58,7 +59,7 @@ app.MapGet("hello", (string? name) =>
 });
 ```
 
-![](https://jakubwajs.files.wordpress.com/2023/01/image-3.png?w=439)
+![Picture of the browser with Please provide the name text displayed.](/assets/images/2023/01/minimal-api-in-net-7-tips-tricks/images/image-3.png?w=439)
 
 ## Dependency injection
 
@@ -132,7 +133,7 @@ app.MapGet("hello", (\[FromServices\] ILogger logger, string? name) =>
 
 Will produce the following doc:
 
-![](https://jakubwajs.files.wordpress.com/2023/01/image-4.png?w=1024)
+![Picture of endpoint documentation produced by Swagger.](/assets/images/2023/01/minimal-api-in-net-7-tips-tricks/images/image-4.png?w=1024)
 
 ## Summary
 

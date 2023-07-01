@@ -3,7 +3,7 @@ title: "\"Sign in with Apple\" in Kentico 13 website with .NET 4.8, OWIN, and Op
 description: Sign-in/up with… has become a ubiquitous authentication method for most modern websites. In this blog post, I guide you through the process of integrating your Apple ID registration/login into your Kentico 13 CMS website.
 publishDate: 2023-05-02 00:00:00
 img: '/assets/images/2023/05/sign-in-with-apple-in-kentico-13-website-with-net-4-8-owin-and-openid/images/xiong-yan-lwaw_dl09s4-unsplash.jpg'
-img_alt: 'Image post 2'
+img_alt: Picture with iPhone and iPad lying on the white paper.
 tags: 
   - "net"
   - "apple"
@@ -27,7 +27,7 @@ If your Kentico project does not have any external providers added, please follo
 
 When your SSO works correctly in the project, you can start installing the required packages. There is only one - **Microsoft.Owin.Security.OpenIdConnect** (in my case in version 4.2.2).
 
-[](https://jakubwajs.files.wordpress.com/2023/04/image-7.png)
+![Screenshot from nuget package manager with Microsoft.Owin.Security.OpenIdConnect package.](/assets/images/2023/05/sign-in-with-apple-in-kentico-13-website-with-net-4-8-owin-and-openid/images/image-7.png)
 
 In this tutorial, I will skip the configuration on the Apple Developer's account side. What you will need is a Client ID from the service and Redirect URI defined in it.
 
@@ -77,7 +77,7 @@ Now go to Kentico. Add settings with defined keys in the _Modules_ app (as descr
 
 **IMPORTANT: the value of the redirect URI does not need to be a real URL within your app (I always add _/signin-apple|google|facebook_ at the end of the App URL) but must match the Redirect URI defined on the Apple side.**
 
-![](https://jakubwajs.files.wordpress.com/2023/04/image-5.png?w=829)
+![Screenshot with Kentico configuration.](/assets/images/2023/05/sign-in-with-apple-in-kentico-13-website-with-net-4-8-owin-and-openid/images/image-5.png?w=829)
 
 Now just edit the _Startup_ file to inject settings and add a flag for enabling/disabling this authentication type.
 

@@ -3,6 +3,7 @@ title: Message broker in .NET 7 with RabbitMQ and Docker
 description: Message brokers are an essential part of modern application architecture. In this blog post, we explore how to set up a message broker using RabbitMQ and Docker in .NET 7.
 publishDate: 2023-04-11 00:00:00
 img: '/assets/images/2023/04/message-broker-in-net-7-with-rabbitmq-and-docker/images/gary-bendig-kvht4dltpeq-unsplash.jpg'
+img_alt: Picture with rabbit, animal.
 tags: 
   - "net-core"
   - "docker"
@@ -36,7 +37,7 @@ This simple endpoint just displays the text "Hello" on the browser. We'll extend
 
 Now it's time to install the RabbitMQ packages, which will allow us to publish messages to the message broker. We need only one - **MassTransit.RabbitMQ**.
 
-![](https://jakubwajs.files.wordpress.com/2023/04/image.png?w=1011)
+![Nuget package manager view with MassTransit.RabbitMQ library selected.](/assets/images/2023/04/message-broker-in-net-7-with-rabbitmq-and-docker/images/image.png?w=1011)
 
 Register it with the built-in extension method in _Program.cs_:
 
@@ -77,15 +78,15 @@ public sealed class MessageBrokerSettings
 
 Now it's time to set up Docker containers for API and RabbitMQ. Start by clicking with RMB on the project in Visual Studio. Choose _Add_ and then _Container Orchestrator Support_.
 
-![](https://jakubwajs.files.wordpress.com/2023/02/image-3.png?w=680)
+![Picture with Visual Studio with Container Orchestrator Support option opened.](https://jakubwajs.files.wordpress.com/2023/02/image-3.png?w=680)
 
 Next, select _Docker Compose_ with Linux as the target OS.
 
-![](https://jakubwajs.files.wordpress.com/2023/02/image-4.png?w=415)
+![Picture with Add Container Orchestrator Support window with Docker Compose option selected.](https://jakubwajs.files.wordpress.com/2023/02/image-4.png?w=415)
 
 Visual Studio will automatically generate Dockerfile for your API and Docker Compose file. Half of the work is done without any effort ;)
 
-![](https://jakubwajs.files.wordpress.com/2023/03/image.png?w=422)
+![Picture with generated Docker compose file.](https://jakubwajs.files.wordpress.com/2023/03/image.png?w=422)
 
 Let's edit the compose file. The missing part is our RabbitMQ container. The code presented below will pull the latest image from the Docker registry and will use the local folder to store data (_volumes_ section) so that the data contained in it will not be deleted when the container is removed. I've added also the dependency on the API container so we'll be sure that the cache container is always initialized first.
 
@@ -192,19 +193,19 @@ docker compose up -d
 
 Or by using the built-in Docker Compose runner in Visual Studio. If everything was set correctly, you should be able to see two containers in Docker Desktop as in the screenshot below.
 
-![](https://jakubwajs.files.wordpress.com/2023/04/image-2.png?w=734)
+![Screenshot with two containers running in Docker Desktop.](/assets/images/2023/04/message-broker-in-net-7-with-rabbitmq-and-docker/images/image-2.png?w=734)
 
 Go to the swagger URL in the browser (by default: _https://localhost/swagger/index.html_) and use its _Try it out_ option to get the response from the endpoint. In the response, you should get the message and the current time stamp.
 
-![](https://jakubwajs.files.wordpress.com/2023/04/image-1.png?w=1024)
+![Screenshot with the endpoint visible in the Swagger view.](/assets/images/2023/04/message-broker-in-net-7-with-rabbitmq-and-docker/images/image-1.png?w=1024)
 
 Ok, our endpoint is running correctly, so the last thing to check is if the RabbitMQ instance received the message produced by API. To do this, open the RabbitMQ admin panel in the browser (should be running on port 15672). Sign in using the credentials provided in the docker-compose file.
 
-![](https://jakubwajs.files.wordpress.com/2023/04/image-3.png?w=288)
+![Picture with Rabbit MQ login window.](/assets/images/2023/04/message-broker-in-net-7-with-rabbitmq-and-docker/images/image-3.png?w=288)
 
 Go to the Exchanges tab and choose an exchange with your event name - in this case _MessageBroker.Api.MessageBroker.Events:HelloEvent_. You can see that the message published when you accessed the API endpoint was received by the message broker.
 
-![](https://jakubwajs.files.wordpress.com/2023/04/image-4.png?w=765)
+![Diagram with Message Broker Events.](/assets/images/2023/04/message-broker-in-net-7-with-rabbitmq-and-docker/images/image-4.png?w=765)
 
 ### Source code
 

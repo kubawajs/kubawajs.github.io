@@ -3,7 +3,7 @@ title: Logging with log4net in .NET 7 Console App
 description: In this post, I will go through the setup of logging with log4net in the .NET 7 console application and try to solve some of the common issues you can encounter during this process.
 publishDate: 2023-01-17 00:00:00
 img: '/assets/images/2023/01/logging-with-log4net-in-net-7-console-app/images/colored-console-error.png'
-img_alt: 'Image post 2'
+img_alt: Picture of the computer console error.
 tags: 
   - "net"
   - "net-core"
@@ -16,7 +16,7 @@ In this post, I will go through the setup of logging with log4net in the .NET 7 
 
 In this tutorial, I will use .NET 7, log4net v2.0.15, and Visual Studio Community 2022. Start with creating a new project using the _Console App_ template.
 
-![](https://jakubwajs.files.wordpress.com/2023/01/image-5.png?w=1024)
+![Screenshot from Visual Studio with Console.Writeline "hello, world" text displayed.)](/assets/images/2023/01/logging-with-log4net-in-net-7-console-app/images/image-5.png?w=1024)
 
 New Console App project in Visual Studio 2022
 
@@ -28,7 +28,7 @@ Install-Package log4net
 
 If you're using Visual Studio you can do this also through the **NuGet Package Manager** window. Click RMB on your project in the Solution Explorer window and choose Manage Nuget Packages... Then search for **log4net** in the Browse tab. Click on log4net and install the latest version of the **package**.
 
-![](https://jakubwajs.files.wordpress.com/2023/01/image-6.png?w=887)
+![Screenshot from nuget package manager with log4net package selected.](/assets/images/2023/01/logging-with-log4net-in-net-7-console-app/images/image-6.png?w=887)
 
 Log4net package installation through NuGet Package Manager
 
@@ -90,7 +90,7 @@ Console.ReadLine();
 
 If we run our program now, **the console still displays only the "Hello world!" text**. The reason for this behavior is that by default log4net.config file is not copied to the output directory, which means that Configure method that we've set up in the previous step can't find the file to load the configuration. To fix this issue, right-click on log4net.config file and choose Properties. Then change the option under **Copy to Output Directory** build action into **Copy if newer** or **Copy always**.
 
-[](https://jakubwajs.files.wordpress.com/2023/01/image-8.png?w=324)
+![Visual Studio file properties view with Copy to Output Directory option selected.](/assets/images/2023/01/logging-with-log4net-in-net-7-console-app/images/image-8.png)
 
 Setup copy action of the configuration file on the project build
 
@@ -100,23 +100,23 @@ Here it is! Our logging configuration is completed. We can see our logs in the c
 ~\\<project\_name>\\bin\\Debug\\net7.0
 ```
 
-![](https://jakubwajs.files.wordpress.com/2023/01/image-9.png?w=975)
+![Picture of the computer console with INFO, ERROR and WARN messages displayed.](/assets/images/2023/01/logging-with-log4net-in-net-7-console-app/images/image-9.png?w=975)
 
 ## Colored Console Appender
 
 Our logging is ready, but as you can see in the screen above, at first glance it's difficult to distinguish which logs indicate application errors, and which are only informational. Hopefully, log4net provides a specific appender to make console logs colorful. As I found [here](https://logging.apache.org/log4net/release/config-examples.html), it just needs the replacement of the regular **ConsoleAppender** with the **ColoredConsoleAppender** and adding a few lines to the configuration file, containing log types mapping into individual colors. But, it doesn't work for me.
 
-![](https://jakubwajs.files.wordpress.com/2023/01/colored-console-error.png)
+![Picture of the computer console with Could not create appender error.](/assets/images/2023/01/logging-with-log4net-in-net-7-console-app/images/colored-console-error.png)
 
 After quite a long research about my issue and 100 times verifications that I did make no mistake in the configuration file, I found [this repository](https://gist.github.com/mizanRahman/4484020). And exactly this comment:
 
-![](https://jakubwajs.files.wordpress.com/2023/01/colored-console-solution.png)
+![Screenshot from the GitHub discussion about the error.](/assets/images/2023/01/logging-with-log4net-in-net-7-console-app/images/colored-console-solution.png)
 
 [https://gist.github.com/mizanRahman/4484020](https://gist.github.com/mizanRahman/4484020)
 
 I've followed the suggestion and replaced **ColoredConsoleAppender** with **ManagedColoredConsoleAppender**. Et... voila! Our colored console logging works perfectly.
 
-![](https://jakubwajs.files.wordpress.com/2023/01/image-10.png?w=979)
+![Picture of the computer console with INFO, ERROR and WARN messages displayed colored in green, red and yellow.](/assets/images/2023/01/logging-with-log4net-in-net-7-console-app/images/image-10.png?w=979)
 
 And final look on **log4net.config** file:
 
