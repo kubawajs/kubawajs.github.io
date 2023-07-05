@@ -1,19 +1,27 @@
-# Astro Starter Kit: Portfolio
+# Astro Website
 
-```
-npm create astro@latest -- --template portfolio
-```
+![Deployment workflow](https://github.com/kubawajs/kubawajs.github.io/actions/workflows/deploy.yml/badge.svg)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/portfolio)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/portfolio)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/portfolio/devcontainer.json)
+This is my personal website built with Astro framework.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Blog
 
-![portfolio](https://user-images.githubusercontent.com/357379/210779178-a98f0fb7-6b1a-4068-894c-8e1403e26654.jpg)
+Blog posts were migrated from my previous blog hosted on [wordpress.com](https://wordpress.com).
+Exported files in the XML format were then converted into markdown using [wordpress-export-to-markdown tool](https://github.com/lonekorean/wordpress-export-to-markdown)
 
+## Features
 
-## 🧞 Commands
+- [x] Custom styling
+- [x] Blog
+- [x] Github Actions
+- [x] Image optimization - [@astrojs/image](https://docs.astro.build/en/guides/integrations-guide/image/)
+- [x] Static files compression
+- [x] Partytown integration - [@astrojs/partytown](https://docs.astro.build/en/guides/integrations-guide/partytown/)
+- [x] Google Analytics 4
+- [x] Sitemap - [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
+- [x] Robots.txt - [alextim/astro-lib](https://github.com/alextim/astro-lib/tree/main/packages/astro-robots-txt#readme)
+
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -26,6 +34,18 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## References
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Astro Starter Kit: Portfolio
+
+```
+npm create astro@latest -- --template portfolio
+```
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/portfolio)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/portfolio)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/portfolio/devcontainer.json)
+
+### Want to learn more?
+
+Feel free to check [astro documentation](https://docs.astro.build) or jump into [Discord server](https://astro.build/chat).
