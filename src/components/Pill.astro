@@ -1,4 +1,15 @@
-<div class="pill"><slot /></div>
+---
+interface Pill {
+	url?: string;
+}
+
+const { url } = Astro.props;
+---
+
+{
+	(url ? <a href={url}><div class="pill"><slot /></div></a> : <div class="pill"><slot /></div>)
+}
+
 
 <style>
 	.pill {
@@ -12,5 +23,10 @@
 		font-size: var(--text-md);
 		line-height: 1.35;
 		white-space: nowrap;
+	}
+
+	.pill:hover {
+		background-color: var(--accent-dark);
+		color: var(--accent-subtle-overlay);
 	}
 </style>

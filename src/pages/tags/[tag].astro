@@ -11,7 +11,7 @@ export async function getStaticPaths() {
     const allPosts = (await getCollection('blog'))
         .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
     const allTags = [... new Set(allPosts.map((tag) => tag.data.tags).flat(1))];
-    
+
     return allTags.map((tag) => ({
         params: { tag: tag },
         props: { posts: allPosts.filter((post) => post.data.tags?.includes(tag))}
@@ -20,17 +20,14 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params;
 const { posts } = Astro.props;
-const pageTitle = `Tag ${tag} | Blog | Jakub Wajs`;
-const pageHeader = `Tag #${tag}`;
-const pageTagline = `Posts tagged with #${tag}`;
 ---
 
-<BaseLayout title={pageTitle}>
+<BaseLayout title={`Tag ${tag} | Blog | Jakub Wajs`}>
   <div class="stack gap-20">
     <main class="wrapper stack gap-8">
         <Hero
-            title={pageHeader}
-            tagline={pageTagline}
+            title={`Tag #${tag}`}
+            tagline={`Posts tagged with #${tag}`}
             align="start"
         />
         <Grid>
