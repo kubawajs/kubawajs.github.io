@@ -49,6 +49,7 @@ export default defineConfig({
     '/2018/05/14/visual-studio-live-share-preview-finally-released/': '/blog/2018/05/visual-studio-live-share-preview-finally-released/',
     '/2018/09/26/machine-learning-in-net-introducing-ml-net/': '/blog/2018/09/machine-learning-in-net-introducing-ml-net/',
     '/2019/11/28/logging-with-log4net-in-net-core-3-0-console-app/': '/blog/2019/11/logging-with-log4net-in-net-core-3-0-console-app/',
+    '/2019/11/28/logging-with-log4net-in-net-core-3-0-console-app/comment-page-1/?unapproved=3749&moderation-hash=de63c05c7449972c2afd0e03a2bea206': '/blog/2019/11/logging-with-log4net-in-net-core-3-0-console-app/',
     '/2019/12/23/excel-import-and-export-in-sitecore-content-hub/': '/blog/2019/12/excel-import-and-export-in-sitecore-content-hub/',
     '/2019/12/13/javascript-customization-in-sitecore-content-hub-introducing-external-page-components/': '/blog/2019/12/javascript-customization-in-sitecore-content-hub-introducing-external-page-components/',
     '/2020/01/31/deploying-asp-net-core-3-1-web-api-to-heroku-with-docker/': '/blog/2020/01/deploying-asp-net-core-3-1-web-api-to-heroku-with-docker/',
