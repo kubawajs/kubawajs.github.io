@@ -1,5 +1,4 @@
 import { defineConfig } from "astro/config";
-import image from "@astrojs/image";
 import partytown from "@astrojs/partytown";
 import compress from "astro-compress";
 import sitemap from "@astrojs/sitemap";
@@ -11,7 +10,6 @@ const domainUrl = "https://www.wajs-dev.net";
 export default defineConfig({
   site: domainUrl,
   integrations: [
-    image(),
     compress(),
     partytown({
       config: {

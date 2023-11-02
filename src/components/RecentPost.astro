@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { Picture } from '@astrojs/image/components';
+import { Picture } from 'astro:assets';
 import Icon from './Icon.astro';
 
 interface Props {
@@ -8,12 +8,13 @@ interface Props {
 }
 
 const { data, slug } = Astro.props.project;
-const derivatives = [250, 350, 450];
+const widthDerivatives = [250, 350, 450];
+const heightDerivatives = [350, 450, 550];
 ---
 
 <div class="blogCard">
 	<a href={`/blog/${slug}`} title={data.title}>
-		{data.img && <Picture src={data.img} widths={derivatives} alt={data.img_alt} aspectRatio="3:2" formats={['webp']} />}
+		{data.img && <Picture src={data.img} width={widthDerivatives} height={heightDerivatives} alt={data.img_alt} formats={['webp']} />}
 		<h3 set:html={data.title}></h3>
 		<p set:html={data.description}></p>
 		<span class="readMore">Read more <Icon icon="arrow-right" /></span>
