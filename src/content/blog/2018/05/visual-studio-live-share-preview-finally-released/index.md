@@ -20,7 +20,7 @@ Live Share zawiera szereg funkcji, które mają ułatwić pracę nad wspólnym k
 
 _Live Share includes a number of features that make it easier to work on the same code as the whole team. The extension allows you to create a live code sharing sessions. Each session member can real-time edit the code, as well as viewing all project files without interrupting work of other people in team. What's important - keeping your personalized environment._
 
-[caption id="attachment_2501" align="alignnone" width="891"]![vsliveshare](images/vsliveshare.png) [Źródło / _Source_](https://www.visualstudio.com/services/live-share/)[/caption]
+[caption id="attachment_2501" align="alignnone" width="891"]![vsliveshare](/assets/images/2018/05/visual-studio-live-share-preview-finally-released/images/vsliveshare.png) [Źródło / _Source_](https://www.visualstudio.com/services/live-share/)[/caption]
 
  
 Istotną funkcją jest też możliwość grupowego debugowania kodu - programiści mogą niezależnie dodawać breakpointy do kodu, a następnie wspólnie przebijać się przez kolejne jego linie. Również terminal jest współdzielony - wykonywane w nim komendy oraz ich wyniki są widoczne dla całego zespołu.

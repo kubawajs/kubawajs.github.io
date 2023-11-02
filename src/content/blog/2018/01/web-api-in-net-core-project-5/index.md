@@ -75,7 +75,7 @@ Przygotowany kontekst należy następnie zarejestrować. Oznacza to, że należy
 
 _Prepared context should then be registered. This means that it should be injected into_ Dependency injection container_, more specifically - to_ ConfigureServices _method in the_ Startup.cs _file. Thanks to this, it'll be available for use in the controller, which we will write in the next step._
 
-![DI-container](images/di-container.png)
+![DI-container](/assets/images/2018/01/web-api-in-net-core-project-5/images/di-container.png)
 
 ## Kontroler / _Controller_
 

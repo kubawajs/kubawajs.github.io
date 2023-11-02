@@ -18,7 +18,7 @@ img_alt: ""
 
 **_In the era of dynamically developing, ever newer frameworks, the role of JavaScript in frontend programming seems unquestionable. With the introduction of WebAssemblies, however, a new, revolutionary concept appears - Blazor, which can significantly affect the position of this programming language. Soon, it will be possible to write large web applications using C# on both the front and backend._**
 
-[caption id="attachment_2506" align="aligncenter" width="1920"]![Blazor-counter.png](images/blazor-counter.png) App from example Blazor template.[/caption]
+[caption id="attachment_2506" align="aligncenter" width="1920"]![Blazor-counter.png](/assets/images/2018/05/blazor-first-view/images/blazor-counter.png) App from example Blazor template.[/caption]
 
 ### WebAssembly zmienia zasady / WebAssembly change rules
 
@@ -32,7 +32,7 @@ _WebAssembly is a new solution. It allows you to run code written in high-level 
 
 _Importantly, WebAssembly standards are defined by the W3C organization, which should ensure its consistent support for the most popular web browsers. Currently, WebAssembly is available in Mozilla Firefox, Google Chrome, Safari and Microsoft Edge._
 
-[caption id="attachment_2507" align="aligncenter" width="1928"]![webassembly.png](images/webassembly.png) [Source](https://www.sitepoint.com/webassembly-is-overdue-javascript-for-large-projects/)[/caption]
+[caption id="attachment_2507" align="aligncenter" width="1928"]![webassembly.png](/assets/images/2018/05/blazor-first-view/images/webassembly.png) [Source](https://www.sitepoint.com/webassembly-is-overdue-javascript-for-large-projects/)[/caption]
 
 ### Czym jest Blazor? / What is Blazor?
 
@@ -42,7 +42,7 @@ C#-ową odpowiedzią na możliwości oferowane przez WebAssembly jest Blazor. Um
 
 _The C# answer to the possibilities offered by the WebAssembly is Blazor. It allows writing in C# directly in the View, just like it happens with the code parts interpreted by the Razor engine. Unlike previous solutions, the code isn't "translated" into JavaScript, but run as a .NET assembly directly in the browser, without additional plugins. As a result, the programmer doesn't have to switch between two different programming languages. The previous backend programmer will be able to easily perform part of the frontend's tasks without the need to learn a new language/framework._
 
-[caption id="attachment\_2505" align="aligncenter" width="984"]![new-blazor-app-dialog](images/new-blazor-app-dialog.png) Window for creating a new project containing Blazor templates.[/caption]
+[caption id="attachment\_2505" align="aligncenter" width="984"]![new-blazor-app-dialog](/assets/images/2018/05/blazor-first-view/images/new-blazor-app-dialog.png) Window for creating a new project containing Blazor templates.[/caption]
 
 Pomimo, że Blazor jest jeszcze na bardzo wczesnym etapie rozwoju i, jak podkreśla Microsoft, nie do końca wiadomo w jakim kierunku będzie zmierzał dalszy development, możliwe jest już przetestowanie jego dotychczasowej wersji. W ostatnim releasie (wraz .NET Core 2.1) dodano nawet przykładowe szablony aplikacji Blazor: Blazor oraz Blazor (ASP .NET Core hosted). Działanie aplikacji z przykładowego szablonu Blazor można zobaczyć na filmie poniżej.
 

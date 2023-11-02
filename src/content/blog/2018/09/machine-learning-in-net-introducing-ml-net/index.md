@@ -25,7 +25,7 @@ Choć o ML.NET było głośno już w maju, dowiedziałem się o nim dopiero podc
 
 _Although ML.NET became known in May, I learned about it only after this year's .NET Conf._ _The same as [Blazor](https://jakubwajs.wordpress.com/2018/05/31/blazor-first-view/), it is also in early-development stage (the recent version is 0.5) however, it's already used in many Microsoft products (eg. Bing Ads, Excel, PowerPoint, Windows Defender). ML.NET is opensource and cross-platform, what is part of the current course of the company from Redmond, which lays a lot of emphasis on such solutions._
 
-[caption id="attachment_2514" align="aligncenter" width="911"]![mlnet](images/mlnet.png) The machine learning framework was long awaited by the .NET community (source: [blog msdn](http://aka.ms/mlnet0.5))[/caption]
+[caption id="attachment_2514" align="aligncenter" width="911"]![mlnet](/assets/images/2018/09/machine-learning-in-net-introducing-ml-net/images/mlnet.png) The machine learning framework was long awaited by the .NET community (source: [blog msdn](http://aka.ms/mlnet0.5))[/caption]
 
 ## Framework first
 

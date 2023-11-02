@@ -16,7 +16,7 @@ img_alt: ""
 
 #### Source code
 
-- Github - [](https://github.com/kubawajs/ServiceBusExample)[ServiceBusExample](https://github.com/kubawajs/ServiceBusExample)
+- Github - [ServiceBusExample](https://github.com/kubawajs/ServiceBusExample)
 
 #### What you need?
 
@@ -28,15 +28,15 @@ img_alt: ""
 
 First step is to **create the Azure Service Bus Queue**. In order to do that go to Azure portal, click _Create a resource_ and search for the _Service Bus_. Create resource with the name and location of your choice and _Basic_ price tier (it's enough for tutorial purposes - differencies between pricing tiers you can find here - [Azure Service Bus Pricing](https://azure.microsoft.com/en-ca/pricing/details/service-bus/)).
 
-When the deployment of your service is done, it's time to create a queue. Go to your resource and click on _\+ Queue_ button in the _Overview_ section. Type the name of your queue and set values for queue parameters.
+When the deployment of your service is done, it's time to create a queue. Go to your resource and click on _Queue_ button in the _Overview_ section. Type the name of your queue and set values for queue parameters.
 
 ![](https://jakubwajs.files.wordpress.com/2020/04/10.png?w=422)
 
 Example parameters for Azure Service Bus Queue.
 
-The last thing you need to do is to create SAS policy for your web app. Go back to Azure Service Bus resource and choose _Shared access policies_ tab. Click on _\+ Add_ icon. Type policy name and choose claims. For this tutorial you will need only _Send_ claim, but if you're planning to extend your app (or use the same policy for other app) also for listening for service bus messages, choose _Manage_.
+The last thing you need to do is to create SAS policy for your web app. Go back to Azure Service Bus resource and choose _Shared access policies_ tab. Click on _Add_ icon. Type policy name and choose claims. For this tutorial you will need only _Send_ claim, but if you're planning to extend your app (or use the same policy for other app) also for listening for service bus messages, choose _Manage_.
 
-![shared-access-policies](images/11-1.png)
+![shared-access-policies](/assets/images/2020/04/add-message-to-azure-service-bus-from-asp-net-web-application/images/11-1.png)
 
 Adding SAS policy to Azure Service Bus.
 
