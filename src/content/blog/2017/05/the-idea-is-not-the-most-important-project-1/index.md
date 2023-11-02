@@ -67,7 +67,7 @@ _I decided to not plan everything from start to finish. Application will be deve
 
 _The most important of my goals is to have running application after every post. Why? In my opinion, it is much nicer to work when you can **see the effects** of your job at any time._
 
-![stairs-man-img](images/stairs-man-person-walking-e1494108787575.jpg)
+![stairs-man-img](/assets/images/2017/05/the-idea-is-not-the-most-important-project-1/images/stairs-man-person-walking-e1494108787575.jpg)
 
 ### Technologie.
 
