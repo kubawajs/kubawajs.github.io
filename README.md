@@ -22,7 +22,7 @@ Exported files in the XML format were then converted into markdown using [wordpr
 - [x] Sitemap - [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
 - [x] Robots.txt - [alextim/astro-lib](https://github.com/alextim/astro-lib/tree/main/packages/astro-robots-txt#readme)
 - [ ] TODO: Social share
-- [ ] TODO: Cookie banner
+- [x] Cookie banner - [Cookie Script](https://cookie-script.com/)
 
 ## Commands
 
