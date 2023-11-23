@@ -1,5 +1,6 @@
 ---
-import '../styles/global.css';
+import { ViewTransitions } from "astro:transitions";
+import "../styles/global.css";
 
 interface Props {
 	title?: string | undefined;
@@ -7,8 +8,8 @@ interface Props {
 }
 
 const {
-	title = 'Jakub Wajs | .NET Developer',
-	description = 'Jakub Wajs\'s and wajs-dev.net website.',
+	title = "Jakub Wajs | .NET Developer",
+	description = "Jakub Wajs's and wajs-dev.net website.",
 } = Astro.props;
 ---
 
@@ -17,10 +18,10 @@ const {
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
 
-<title>{title}</title>
+<ViewTransitions <title>{title}</ViewTransitions>
 
 <link rel="sitemap" href="/sitemap-index.xml" />
-<link rel="robots" href="/robots.txt">
+<link rel="robots" href="/robots.txt" />
 
 <link rel="icon" type="image/png" href="/favicon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,22 +38,43 @@ const {
 />
 
 <script is:inline>
-	// This code is inlined in the head to make dark mode instant & blocking.
 	const getThemePreference = () => {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-			return localStorage.getItem('theme');
+		if (
+			typeof localStorage !== "undefined" &&
+			localStorage.getItem("theme")
+		) {
+			return localStorage.getItem("theme");
 		}
-		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+		return window.matchMedia("(prefers-color-scheme: dark)").matches
+			? "dark"
+			: "light";
 	};
-	const isDark = getThemePreference() === 'dark';
-	document.documentElement.classList[isDark ? 'add' : 'remove']('theme-dark');
 
-	if (typeof localStorage !== 'undefined') {
-		// Watch the document element and persist user preference when it changes.
+	const isDark = getThemePreference() === "dark";
+	document.documentElement.classList[isDark ? "add" : "remove"]("theme-dark");
+
+	if (typeof localStorage !== "undefined") {
 		const observer = new MutationObserver(() => {
-			const isDark = document.documentElement.classList.contains('theme-dark');
-			localStorage.setItem('theme', isDark ? 'dark' : 'light');
+			const isDark =
+				document.documentElement.classList.contains("theme-dark");
+			localStorage.setItem("theme", isDark ? "dark" : "light");
 		});
-		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+		observer.observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ["class"],
+		});
 	}
+
+	function setDarkMode(document) {
+		let theme = localStorage.theme === 'dark' ? "dark" : "light";
+		let isDark = theme === "dark";
+		document.documentElement.classList[isDark ? "add" : "remove"]("theme-dark");
+		localStorage.theme = isDark ? "dark" : "light";
+	}
+
+	setDarkMode(document);
+
+	document.addEventListener("astro:after-swap", () => {
+		setDarkMode(document);
+	});
 </script>
