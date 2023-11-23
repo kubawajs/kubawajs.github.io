@@ -9,6 +9,9 @@ const domainUrl = "https://www.wajs-dev.net";
 // https://astro.build/config
 export default defineConfig({
   site: domainUrl,
+  prefetch: {
+    defaultStrategy: "viewport"
+  },
   integrations: [
     compress(),
     partytown({

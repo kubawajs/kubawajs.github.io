@@ -14,7 +14,7 @@ const textLinks: { label: string; href: string }[] = [
 
 <nav>
 	<div class="menu-header">
-		<a href="/" class="site-title">
+		<a href="/" class="site-title" data-astro-prefetch>
 			<Icon icon="terminal-window" color="var(--accent-regular)" size="1.6em" gradient />
 			wajs-dev.net
 		</a>
@@ -42,7 +42,7 @@ const textLinks: { label: string; href: string }[] = [
 										(href !== '/' && Astro.url.pathname.startsWith(href)),
 								},
 							]}
-							href={href}
+							href={href} data-astro-prefetch
 						>
 							{label}
 						</a>

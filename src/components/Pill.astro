@@ -7,7 +7,7 @@ const { url } = Astro.props;
 ---
 
 {
-	(url ? <a href={url}><div class="pill"><slot /></div></a> : <div class="pill"><slot /></div>)
+	(url ? <a href={url} data-astro-prefetch><div class="pill"><slot /></div></a> : <div class="pill"><slot /></div>)
 }
 
 
@@ -25,7 +25,7 @@ const { url } = Astro.props;
 		white-space: nowrap;
 	}
 
-	.pill:hover {
+	a div.pill:hover {
 		background-color: var(--accent-dark);
 		color: var(--accent-subtle-overlay);
 	}

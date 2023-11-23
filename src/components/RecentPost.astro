@@ -13,7 +13,7 @@ const heightDerivatives = [350, 450, 550];
 ---
 
 <div class="blogCard">
-	<a href={`/blog/${slug}`} title={data.title}>
+	<a href={`/blog/${slug}`} title={data.title} data-astro-prefetch>
 		{data.img && <Picture src={data.img} width={widthDerivatives} height={heightDerivatives} alt={data.img_alt} formats={['webp']} />}
 		<h3 set:html={data.title}></h3>
 		<p set:html={data.description}></p>
