@@ -19,7 +19,7 @@ const {
 <meta name="generator" content={Astro.generator} />``
 
 <title>{title}</title>
-<ViewTransitions></ViewTransitions>
+<ViewTransitions />
 
 <link rel="sitemap" href="/sitemap-index.xml" />
 <link rel="robots" href="/robots.txt" />
@@ -44,8 +44,9 @@ const {
 			typeof localStorage !== "undefined" &&
 			localStorage.getItem("theme")
 		) {
-			return localStorage.getItem("theme");
+ 			return localStorage.getItem("theme");
 		}
+
 		return window.matchMedia("(prefers-color-scheme: dark)").matches
 			? "dark"
 			: "light";
@@ -67,15 +68,17 @@ const {
 	}
 
 	function setDarkMode(document) {
-		let theme = localStorage.theme === 'dark' ? "dark" : "light";
+		let theme = localStorage.theme === "dark" ? "dark" : "light";
 		let isDark = theme === "dark";
-		document.documentElement.classList[isDark ? "add" : "remove"]("theme-dark");
+		document.documentElement.classList[isDark ? "add" : "remove"](
+			"theme-dark",
+		);
 		localStorage.theme = isDark ? "dark" : "light";
 	}
 
 	setDarkMode(document);
 
-	document.addEventListener("astro:after-swap", () => {
-		setDarkMode(document);
+	document.addEventListener("astro:before-swap", ev => {
+		setDarkMode(ev.newDocument);
 	});
 </script>
