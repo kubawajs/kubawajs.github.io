@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 import partytown from "@astrojs/partytown";
-import compress from "astro-compress";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
 
@@ -13,7 +12,6 @@ export default defineConfig({
     defaultStrategy: "viewport"
   },
   integrations: [
-    compress(),
     partytown({
       config: {
         forward: ["dataLayer.push"],

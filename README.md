@@ -14,7 +14,7 @@ Exported files in the XML format were then converted into markdown using [wordpr
 - [x] Custom styling
 - [x] Blog
 - [x] Github Actions - [Deploy your Astro Site to GitHub Pages](https://docs.astro.build/en/guides/deploy/github/)
-- [x] Image optimization
+- [ ] Image optimization
 - [x] Static files compression [astro-compress](https://github.com/astro-community/astro-compress#readme)
 - [x] Partytown integration - [@astrojs/partytown](https://docs.astro.build/en/guides/integrations-guide/partytown/)
 - [x] Google Analytics 4
