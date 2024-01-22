@@ -1,19 +1,20 @@
 ---
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 // Component Imports
-import Technologies from '../components/Technologies.astro';
-import Hero from '../components/Hero.astro';
-import Icon from '../components/Icon.astro';
-import Pill from '../components/Pill.astro';
-import {Image} from 'astro:assets';
+import Technologies from "../components/Technologies.astro";
+import Hero from "../components/Hero.astro";
+import Icon from "../components/Icon.astro";
+import Pill from "../components/Pill.astro";
+import { Picture } from "astro:assets";
+import heroPhoto from "../assets/portrait-2.JPG";
 
 // Page section components
-import ContactCTA from '../components/ContactCTA.astro';
-import Skills from '../components/Skills.astro';
-import RecentPosts from '../components/RecentPosts.astro';
-import Socials from '../components/Socials.astro';
+import ContactCTA from "../components/ContactCTA.astro";
+import Skills from "../components/Skills.astro";
+import RecentPosts from "../components/RecentPosts.astro";
+import Socials from "../components/Socials.astro";
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
@@ -29,8 +30,12 @@ import Socials from '../components/Socials.astro';
 					align="start"
 				>
 					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
-						<Pill><Icon icon="pencil-line" size="1.33em" /> Blogger</Pill>
+						<Pill>
+							<Icon icon="code" size="1.33em" /> Developer
+						</Pill>
+						<Pill>
+							<Icon icon="pencil-line" size="1.33em" /> Blogger
+						</Pill>
 					</div>
 
 					<div class="socials">
@@ -38,11 +43,9 @@ import Socials from '../components/Socials.astro';
 					</div>
 				</Hero>
 
-				<Image
+				<Picture
 					alt="Photo with man with canyon view in the background."
-					width="480"
-					height="620"
-					src="/assets/portrait-2.JPG"
+					src={heroPhoto}
 				/>
 			</header>
 			<Skills />
@@ -50,14 +53,14 @@ import Socials from '../components/Socials.astro';
 		</div>
 
 		<main class="wrapper stack gap-20">
-			<section class="section three-cols-section with-background bg-variant">
+			<section
+				class="section three-cols-section with-background bg-variant"
+			>
 				<header class="section-header stack gap-2 lg:gap-4">
 					<h3>Latest posts</h3>
-					<p>
-						Visit my blog to read more.
-					</p>
+					<p>Visit my blog to read more.</p>
 				</header>
-			
+
 				<div class="gallery">
 					<RecentPosts />
 				</div>
@@ -93,7 +96,7 @@ import Socials from '../components/Socials.astro';
 		flex-wrap: wrap;
 		gap: 0.625rem;
 		font-size: var(--text-2xl);
-  		justify-content: center;
+		justify-content: center;
 	}
 
 	@media (min-width: 50em) {
@@ -117,7 +120,7 @@ import Socials from '../components/Socials.astro';
 		}
 
 		.socials {
-  			justify-content: start;
+			justify-content: start;
 		}
 	}
 
@@ -135,7 +138,7 @@ import Socials from '../components/Socials.astro';
 	.with-background::before {
 		--hero-bg: var(--bg-image-subtle-2);
 
-		content: '';
+		content: "";
 		position: absolute;
 		pointer-events: none;
 		left: 50%;
@@ -167,18 +170,18 @@ import Socials from '../components/Socials.astro';
 	@media (min-width: 50em) {
 		.section {
 			grid-template-columns: repeat(4, 1fr);
-			grid-template-areas: 'header header header header' 'gallery gallery gallery gallery';
+			grid-template-areas: "header header header header" "gallery gallery gallery gallery";
 			gap: 5rem;
 		}
 
 		.three-cols-section {
 			grid-template-columns: repeat(3, 2fr);
-			grid-template-areas: 'header header header' 'gallery gallery gallery';
+			grid-template-areas: "header header header" "gallery gallery gallery";
 			gap: 5rem;
 		}
 
 		.section.with-cta {
-			grid-template-areas: 'header header header cta' 'gallery gallery gallery gallery';
+			grid-template-areas: "header header header cta" "gallery gallery gallery gallery";
 		}
 
 		.section-header {

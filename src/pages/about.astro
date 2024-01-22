@@ -2,17 +2,16 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 import ContactCTA from '../components/ContactCTA.astro';
-import CallToAction from '../components/CallToAction.astro';
 import Hero from '../components/Hero.astro';
 import Grid from '../components/Grid.astro';
 import { Picture } from 'astro:assets';
+import aboutMePhoto from '../assets/about-me-photo.jpg';
+import azureDeveloperAssociateBadge from '../assets/certificates/certificate-azure-associate.png';
+import appBuilderBadge from '../assets/certificates/certificate-app-builder.png';
+import solutionsAssociateBadge from '../assets/certificates/certificate-solutions-associate.png';
 
-const technologiesAndSkills = ['.NET', '.NET Core', 'C#', 'Azure','JIRA', 'GIT', 'SCRUM', 'Azure DevOps', 'Kentico', 'Sitecore']
+const technologiesAndSkills = ['.NET', 'C#', 'Azure','JIRA', 'GIT', 'SCRUM', 'Azure DevOps', 'Kentico', 'Sitecore', 'Optimizely']
 
-const certBadgeWidthDerivatives = [150, 250, 300];
-const certBadgeHeightDerivatives = [250, 350, 400];
-const heroPictureWidthDerivatives = [400, 600, 1000];
-const heroPictureHeightDerivatives = [600, 800, 1200];
 ---
 
 <BaseLayout title="About | Jakub Wajs" description="About Jakub Wajs - .NET Developer">
@@ -21,7 +20,7 @@ const heroPictureHeightDerivatives = [600, 800, 1200];
 			<Hero
 				title="About me">
 				<!-- tagline="Thanks for stopping by! Read below to learn more about myself and my background." -->
-				<Picture src="/assets/about-me-photo.jpg" width={heroPictureWidthDerivatives} height={heroPictureHeightDerivatives} alt="Photo with a man in sunglasses sitting on the bridge, sky in the background." formats={['webp']}/>
+				<Picture src={aboutMePhoto} alt="Photo with a man in sunglasses sitting on the bridge, sky in the background." formats={['webp']}/>
 			</Hero>
 
 			<section>
@@ -41,16 +40,6 @@ const heroPictureHeightDerivatives = [600, 800, 1200];
 					</p>
 				</div>
 			</section>
-			<!-- <section>
-				<h2 class="section-title">Projects</h2>
-				<div class="content">
-					<div class="projects-cta">
-						<CallToAction href="/work/">
-							View All
-						</CallToAction>
-					</div>
-				</div>
-			</section> -->
 			<section>
 				<h2 class="section-title">Technology stack</h2>
 				<div class="content">
@@ -69,17 +58,17 @@ const heroPictureHeightDerivatives = [600, 800, 1200];
 					<Grid variant="small">
 						<li class="certificate-item">
 							<a href="https://www.credly.com/badges/51599b8f-b0d1-45ea-bffc-8cc28b84a40e/linked_in_profile">
-								<Picture src="/assets/certificates/certificate-azure-associate.png" width={certBadgeWidthDerivatives} height={certBadgeHeightDerivatives} alt="Microsoft Certified: Azure Developer Associate badge" formats={['webp']}/>
+								<Picture src={azureDeveloperAssociateBadge} alt="Microsoft Certified: Azure Developer Associate badge" formats={['webp']}/>
 							</a>
 						</li>
 						<li class="certificate-item">
 							<a href="https://www.credly.com/badges/a860e5de-5e5a-4c17-80d9-805821166a7f/linked_in_profile">
-								<Picture src="/assets/certificates/certificate-app-builder.png" width={certBadgeWidthDerivatives} height={certBadgeHeightDerivatives}  alt="Microsoft Certified Solutions Developer badge" formats={['webp']}/>
+								<Picture src={appBuilderBadge} alt="Microsoft Certified Solutions Developer badge" formats={['webp']}/>
 							</a>
 						</li>
 						<li class="certificate-item">
 							<a href="https://www.credly.com/badges/ce4b4c68-59df-405c-89a2-76ec658f2151/linked_in_profile">
-								<Picture src="/assets/certificates/certificate-solutions-associate.png" width={certBadgeWidthDerivatives} height={certBadgeHeightDerivatives}  alt="Microsoft Certified Solutions Associate badge" formats={['webp']}/>
+								<Picture src={solutionsAssociateBadge} alt="Microsoft Certified Solutions Associate badge" formats={['webp']}/>
 							</a>
 						</li>
 					</Grid>

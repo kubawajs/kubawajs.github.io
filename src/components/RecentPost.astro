@@ -8,13 +8,11 @@ interface Props {
 }
 
 const { data, slug } = Astro.props.project;
-const widthDerivatives = [250, 350, 450];
-const heightDerivatives = [350, 450, 550];
 ---
 
 <div class="blogCard">
 	<a href={`/blog/${slug}`} title={data.title} data-astro-prefetch>
-		{data.img && <Picture src={data.img} width={widthDerivatives} height={heightDerivatives} alt={data.img_alt} formats={['webp']} />}
+		{data.img && <Picture src={data.img} alt={data.img_alt} width={480} height={620} formats={['webp']} />}
 		<h3 set:html={data.title}></h3>
 		<p set:html={data.description}></p>
 		<span class="readMore">Read more <Icon icon="arrow-right" /></span>
