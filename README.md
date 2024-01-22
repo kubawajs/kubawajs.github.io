@@ -18,7 +18,7 @@ Exported files in the XML format were then converted into markdown using [wordpr
 - [x] Static files compression [astro-compress](https://github.com/astro-community/astro-compress#readme)
 - [x] Partytown integration - [@astrojs/partytown](https://docs.astro.build/en/guides/integrations-guide/partytown/)
 - [x] Google Analytics 4
-- [x] Google AdSense - temporary disabled
+- [x] Google AdSense
 - [x] Sitemap - [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)
 - [x] Robots.txt - [alextim/astro-lib](https://github.com/alextim/astro-lib/tree/main/packages/astro-robots-txt#readme)
 - [x] Cookie banner - [Cookie Script](https://cookie-script.com/)
