@@ -2,8 +2,9 @@ import { defineConfig } from "astro/config";
 import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
-
+import compress from "astro-compress";
 const domainUrl = "https://www.wajs-dev.net";
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,25 +12,19 @@ export default defineConfig({
   prefetch: {
     defaultStrategy: "viewport"
   },
-  integrations: [
-    partytown({
-      config: {
-        forward: ["dataLayer.push"],
-      },
-    }),
-    sitemap({
-      filter: (page) => page.toLowerCase().indexOf(`${domainUrl}/work`) === -1,
-    }),
-    robotsTxt({
-      sitemap: `${domainUrl}/sitemap-index.xml`,
-      policy: [
-        {
-          userAgent: '*',
-          disallow: ["/work", "/work/*"],
-        },
-      ],
-    }),
-  ],
+  integrations: [partytown({
+    config: {
+      forward: ["dataLayer.push"]
+    }
+  }), sitemap({
+    filter: page => page.toLowerCase().indexOf(`${domainUrl}/work`) === -1
+  }), robotsTxt({
+    sitemap: `${domainUrl}/sitemap-index.xml`,
+    policy: [{
+      userAgent: '*',
+      disallow: ["/work", "/work/*"]
+    }]
+  }), compress()],
   redirects: {
     '/2017/05/06/console-writelinehello-world/': '/blog/2017/05/console-writelinehello-world/',
     '/2017/05/15/first-webpage-with-materialize-project-2/': '/blog/2017/05/first-webpage-with-materialize-project-2/',
@@ -64,6 +59,6 @@ export default defineConfig({
     '/2023/01/16/minimal-api-in-net-7-tips-tricks/': '/blog/2023/01/minimal-api-in-net-7-tips-tricks/',
     '/2023/02/23/distributed-cache-in-net-7-with-redis-docker/': '/blog/2023/02/distributed-cache-in-net-7-with-redis-docker/',
     '/2023/04/11/message-broker-in-net-7-with-rabbitmq-and-docker/': '/blog/2023/04/message-broker-in-net-7-with-rabbitmq-and-docker/',
-    '/2023/05/02/sign-in-with-apple-in-kentico-13-website-with-net-4-8-owin-and-openid/': '/blog/2023/05/sign-in-with-apple-in-kentico-13-website-with-net-4-8-owin-and-openid/',
+    '/2023/05/02/sign-in-with-apple-in-kentico-13-website-with-net-4-8-owin-and-openid/': '/blog/2023/05/sign-in-with-apple-in-kentico-13-website-with-net-4-8-owin-and-openid/'
   }
 });
