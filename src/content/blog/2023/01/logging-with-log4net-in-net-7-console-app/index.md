@@ -2,7 +2,7 @@
 title: Logging with log4net in .NET 7 Console App
 description: In this post, I will go through the setup of logging with log4net in the .NET 7 console application and try to solve some of the common issues you can encounter during this process.
 publishDate: 2023-01-17 00:00:00
-img: '/assets/images/2023/01/logging-with-log4net-in-net-7-console-app/images/colored-console-error.png'
+img: '/assets/images/2023/01/logging-with-log4net-in-net-7-console-app/images/hero.jpg'
 img_alt: Picture of the computer console error.
 tags: 
   - "net"

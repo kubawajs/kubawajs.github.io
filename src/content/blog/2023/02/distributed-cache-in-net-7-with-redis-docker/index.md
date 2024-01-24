@@ -2,7 +2,7 @@
 title: Distributed cache in .NET 7 with redis & docker
 description: Distributed caching is an effective technique for improving the performance and scalability of .NET web applications. In this blog post, I show how to set up a distributed cache in .NET 7 using Redis and Docker.
 publishDate: 2023-02-23 00:00:00
-img: '/assets/images/2023/02/distributed-cache-in-net-7-with-redis-docker/images/ian-taylor-joqjbvo1p9g-unsplash.jpg'
+img: '/assets/images/2023/02/distributed-cache-in-net-7-with-redis-docker/images/hero.jpg'
 img_alt: Photo of ship on the sea loaded with containers.
 tags: 
   - "net7"
@@ -199,7 +199,3 @@ app.MapGet("api/objectcache", async (IDistributedCacheService cacheService) =>
 - [https://learn.microsoft.com/en-us/aspnet/core/performance/caching/distributed?view=aspnetcore-7.0](https://learn.microsoft.com/en-us/aspnet/core/performance/caching/distributed?view=aspnetcore-7.0)
 
 - [https://geshan.com.np/blog/2022/01/redis-docker/](https://geshan.com.np/blog/2022/01/redis-docker/)
-
-* * *
-
-Hero photo by [Ian Taylor](https://unsplash.com/@carrier_lost?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/jOqJbvo1P9g?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

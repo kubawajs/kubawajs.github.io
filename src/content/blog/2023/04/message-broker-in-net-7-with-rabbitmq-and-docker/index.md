@@ -2,7 +2,7 @@
 title: Message broker in .NET 7 with RabbitMQ and Docker
 description: Message brokers are an essential part of modern application architecture. In this blog post, we explore how to set up a message broker using RabbitMQ and Docker in .NET 7.
 publishDate: 2023-04-11 00:00:00
-img: '/assets/images/2023/04/message-broker-in-net-7-with-rabbitmq-and-docker/images/gary-bendig-kvht4dltpeq-unsplash.jpg'
+img: '/assets/images/2023/04/message-broker-in-net-7-with-rabbitmq-and-docker/images/hero.jpg'
 img_alt: Picture with rabbit, animal.
 tags: 
   - "net-core"
@@ -210,7 +210,3 @@ Go to the Exchanges tab and choose an exchange with your event name - in this ca
 ### Source code
 
 - [https://github.com/kubawajs/MessageBroker](https://github.com/kubawajs/MessageBroker)
-
-* * *
-
-Hero photo by [Gary Bendig](https://unsplash.com/es/@kris_ricepees?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/KvHT4dltPEQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

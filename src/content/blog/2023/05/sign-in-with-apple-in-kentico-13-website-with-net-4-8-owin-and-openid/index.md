@@ -2,7 +2,7 @@
 title: "\"Sign in with Apple\" in Kentico 13 website with .NET 4.8, OWIN, and OpenId"
 description: Sign-in/up with… has become a ubiquitous authentication method for most modern websites. In this blog post, I guide you through the process of integrating your Apple ID registration/login into your Kentico 13 CMS website.
 publishDate: 2023-05-02 00:00:00
-img: '/assets/images/2023/05/sign-in-with-apple-in-kentico-13-website-with-net-4-8-owin-and-openid/images/xiong-yan-lwaw_dl09s4-unsplash.jpg'
+img: '/assets/images/2023/05/sign-in-with-apple-in-kentico-13-website-with-net-4-8-owin-and-openid/images/hero.jpg'
 img_alt: Picture with iPhone and iPad lying on the white paper.
 tags: 
   - "net"
@@ -98,7 +98,3 @@ That's all, everything else will be handled by the code from Kentico's tutorial.
 - [https://docs.xperience.io/managing-users/user-registration-and-authentication/configuring-external-authentication](https://docs.xperience.io/managing-users/user-registration-and-authentication/configuring-external-authentication)
 
 - [Implementing Sign in with Apple in ASP.NET Core (scottbrady91.com)](https://www.scottbrady91.com/openid-connect/implementing-sign-in-with-apple-in-aspnet-core)
-
-* * *
-
-Hero photo by [Xiong Yan](https://unsplash.com/@slothxbear?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/lwaw_DL09S4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
