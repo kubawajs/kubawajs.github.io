@@ -12,28 +12,34 @@ interface Props {
 const {
 	title = "Jakub Wajs | .NET Developer",
 	description = "Jakub Wajs's and wajs-dev.net website.",
-	image = ""
+	image,
 } = Astro.props;
 ---
 
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
 <SEO
 	title={title}
 	description={description}
+	charset="utf-8"
 	openGraph={{
 		basic: {
 			title: title ? title : "",
-			type: "website",
+			type: "article",
 			image: image ? image : "",
 		},
 	}}
 	,
 	twitter={{
+		card: "summary_large_image",
+		site: "www.wajs-dev.net",
 		creator: "@wajs_kuba",
+		title: title,
+		description: description,
+		image: image,
 	}}
 />
-<meta name="viewport" content="width=device-width" />
-<meta name="generator" content={Astro.generator} />``
 
 <title>{title}</title>
 <ViewTransitions />
