@@ -1,42 +1,104 @@
 ---
-import Icon from './Icon.astro';
+import Icon from "./Icon.astro";
 ---
 
 <section class="box skills gap-20">
 	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="terminal-window" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>.NET Developer</h2>
-		<p>I am an experienced .NET Developer with over 5 years of expertise, dedicated to delivering robust back-end solutions and driving project success.</p>
+		<div class="title-row">
+			<Icon
+				icon="terminal-window"
+				color="var(--accent-regular)"
+				size="2.5rem"
+				gradient
+			/>
+			<h2>.NET Developer</h2>
+		</div>
+		<p>
+			With over 8 years of professional experience, I bring expertise in
+			C#, .NET Core, and .NET Framework, creating reliable and
+			maintainable solutions tailored to your needs.
+		</p>
 	</div>
 	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="list" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>CMS Expert</h2>
-		<p>Simplify your content management process with my extensive knowledge of popular CMS platforms like Sitecore XP, Kentico, and Optimizely CMS.</p>
+		<div class="title-row">
+			<Icon
+				icon="list"
+				color="var(--accent-regular)"
+				size="2.5rem"
+				gradient
+			/>
+			<h2>CMS Specialist</h2>
+		</div>
+		<p>
+			I have extensive hands-on experience with industry-leading CMS
+			platforms like Optimizely, Kentico, and Sitecore.
+		</p>
 	</div>
 	<div class="stack gap-2 lg:gap-4">
-		<Icon icon="cloud" color="var(--accent-regular)" size="2.5rem" gradient />
-		<h2>Azure Professional</h2>
-		<p>As a Microsoft Certified Azure Developer Associate, I provide cutting-edge solutions for seamless cloud integration.</p>
+		<div class="title-row">
+			<Icon
+				icon="cloud"
+				color="var(--accent-regular)"
+				size="2.5rem"
+				gradient
+			/>
+			<h2>Azure Professional</h2>
+		</div>
+		<p>
+			As a Microsoft Certified Azure Developer Associate, I deliver
+			scalable, secure, and high-performance cloud solutions to support
+			modern business needs.
+		</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<div class="title-row">
+			<Icon
+				icon="certificate"
+				color="var(--accent-regular)"
+				size="2.5rem"
+				gradient
+			/>
+			<h2>Certified Expert</h2>
+		</div>
+		<p>
+			Microsoft Certified: Azure Developer Associate, MCSD: App Builder,
+			MCSA: Web Applications
+		</p>
 	</div>
 </section>
 
 <style>
 	.box {
 		padding: 1.5rem;
+		overflow-x: auto;
 	}
 
 	.skills {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 2rem;
+	}
+
+	.title-row {
 		display: flex;
-		flex-direction: column;
-		gap: 3rem;
+		align-items: center;
+		gap: 1rem;
 	}
 
 	.skills h2 {
 		font-size: var(--text-lg);
+		margin: 0;
 	}
 
 	.skills p {
 		color: var(--gray-100);
+	}
+
+	@media (max-width: 30em) {
+		.skills {
+			grid-template-columns: repeat(4, minmax(250px, 1fr));
+			padding-bottom: 1rem;
+		}
 	}
 
 	@media (min-width: 50em) {
@@ -46,13 +108,11 @@ import Icon from './Icon.astro';
 		}
 
 		.skills {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 5rem;
+			gap: 2rem;
 		}
 
 		.skills h2 {
-			font-size: var(--text-2xl);
+			font-size: var(--text-xl);
 		}
 	}
 </style>

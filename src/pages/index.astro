@@ -25,8 +25,8 @@ import Socials from "../components/Socials.astro";
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
-					title="Welcome."
-					subtitle="My name is Kuba and I am .NET Developer."
+					title="Hello."
+					subtitle="My name is Kuba and I am .NET Developer and CMS Specialist."
 					align="start"
 				>
 					<div class="roles">
@@ -34,7 +34,7 @@ import Socials from "../components/Socials.astro";
 							<Icon icon="code" size="1.33em" /> Developer
 						</Pill>
 						<Pill>
-							<Icon icon="pencil-line" size="1.33em" /> Blogger
+							<Icon icon="pencil-line" size="1.33em" /> CMS Specialist
 						</Pill>
 					</div>
 
@@ -42,7 +42,6 @@ import Socials from "../components/Socials.astro";
 						<Socials />
 					</div>
 				</Hero>
-
 				<Picture
 					alt="Photo with man with canyon view in the background."
 					src={heroPhoto}
@@ -57,8 +56,7 @@ import Socials from "../components/Socials.astro";
 				class="section three-cols-section with-background bg-variant"
 			>
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Latest posts</h3>
-					<p>Visit my blog to read more.</p>
+					<h3>Latest Blog Posts</h3>
 				</header>
 
 				<div class="gallery">
@@ -74,7 +72,7 @@ import Socials from "../components/Socials.astro";
 <style>
 	.hero {
 		display: flex;
-		flex-direction: column;
+		flex-direction: column-reverse;
 		align-items: center;
 		gap: 2rem;
 	}

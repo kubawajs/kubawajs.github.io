@@ -1,10 +1,13 @@
 ---
-import CallToAction from './CallToAction.astro';
-import Icon from './Icon.astro';
+import CallToAction from "./CallToAction.astro";
+import Icon from "./Icon.astro";
 ---
 
 <aside>
-	<h2>Interested in working together?</h2>
+	<div class="">
+		<h2>Let’s Connect!</h2>
+		<p>Ready to collaborate on your next big idea?</p>
+	</div>
 	<CallToAction href="mailto:jakub.wajs10@gmail.com">
 		Send Me a Message
 		<Icon icon="paper-plane-tilt" size="1.2em" />
@@ -28,6 +31,7 @@ import Icon from './Icon.astro';
 		font-size: var(--text-xl);
 		text-align: center;
 		max-width: 15ch;
+		margin-bottom: 1rem;
 	}
 
 	@media (min-width: 50em) {

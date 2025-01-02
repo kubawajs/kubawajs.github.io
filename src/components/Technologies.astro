@@ -1,41 +1,51 @@
 ---
-
-import Grid from '../components/Grid.astro';
-import Icon from './Icon.astro';
-
-type Technology = {
-    name: string,
-    icon: string
-}
-
-const technologies = [ {name: '.NET', icon: 'dotnet'}, {name: 'C#', icon: 'csharp'}, {name: 'Azure', icon: 'azure'},  {name: 'Kentico', icon: 'kentico'},  {name: 'Optimizely', icon: 'optimizely'}];
-
+import Grid from "../components/Grid.astro";
+import Icon from "./Icon.astro";
 ---
 
 <Grid variant="small">
 	<li class="technology-card">
 		<span class="technology-icon">
-			<Icon icon="dotnet" viewBox='0 0 256 256' width='256' height='256' color='none' />
+			<Icon
+				icon="dotnet"
+				viewBox="0 0 256 256"
+				width="256"
+				height="256"
+				color="none"
+			/>
 		</span>
 	</li>
 	<li class="technology-card">
 		<span class="technology-icon">
-			<Icon icon="csharp" viewBox='0 0 128 128' width='128' height='128' color='none' />
+			<Icon
+				icon="azure"
+				viewBox="0 0 128 128"
+				width="128"
+				height="128"
+				color="none"
+			/>
 		</span>
 	</li>
 	<li class="technology-card">
 		<span class="technology-icon">
-			<Icon icon="azure" viewBox='0 0 128 128' width='128' height='128' color='none' />
+			<Icon
+				icon="kentico"
+				viewBox="0 0 24 24"
+				width="24"
+				height="24"
+				color="none"
+			/>
 		</span>
 	</li>
 	<li class="technology-card">
 		<span class="technology-icon">
-			<Icon icon="kentico" viewBox='0 0 24 24' width='24' height='24' color='none' />
-		</span>
-	</li>
-	<li class="technology-card">
-		<span class="technology-icon">
-			<Icon icon="optimizely" viewBox='0 0 256 248' width='256' height='248' color='none' />
+			<Icon
+				icon="optimizely"
+				viewBox="0 0 256 248"
+				width="256"
+				height="248"
+				color="none"
+			/>
 		</span>
 	</li>
 </Grid>
@@ -46,14 +56,14 @@ const technologies = [ {name: '.NET', icon: 'dotnet'}, {name: 'C#', icon: 'cshar
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-        font-size: var(--text-lg);
+		font-size: var(--text-lg);
 		color: var(--gray-100);
 	}
 
-    .technology-icon {
+	.technology-icon {
 		padding: 0.25rem;
 		font-size: 4rem;
-    }
+	}
 
 	@media (min-width: 50em) {
 		.technology-icon {
