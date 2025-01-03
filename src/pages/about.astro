@@ -1,55 +1,85 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-import ContactCTA from '../components/ContactCTA.astro';
-import Hero from '../components/Hero.astro';
-import Grid from '../components/Grid.astro';
-import { Picture } from 'astro:assets';
-import aboutMePhoto from '../assets/about-me-photo.jpg';
-import azureDeveloperAssociateBadge from '../assets/certificates/certificate-azure-associate.png';
-import appBuilderBadge from '../assets/certificates/certificate-app-builder.png';
-import solutionsAssociateBadge from '../assets/certificates/certificate-solutions-associate.png';
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+import Grid from "../components/Grid.astro";
+import { Picture } from "astro:assets";
+import aboutMePhoto from "../assets/about-me-photo.jpg";
+import azureDeveloperAssociateBadge from "../assets/certificates/certificate-azure-associate.png";
+import appBuilderBadge from "../assets/certificates/certificate-app-builder.png";
+import solutionsAssociateBadge from "../assets/certificates/certificate-solutions-associate.png";
+import Pill from "../components/Pill.astro";
 
-const technologiesAndSkills = ['.NET', 'C#', 'Azure','JIRA', 'GIT', 'SCRUM', 'Azure DevOps', 'Kentico', 'Sitecore', 'Optimizely']
-
+const technologiesAndSkills = [
+	".NET",
+	"C#",
+	"Azure",
+	"JIRA",
+	"GIT",
+	"SCRUM",
+	"Azure DevOps",
+	"Kentico",
+	"Sitecore",
+	"Optimizely",
+];
 ---
 
-<BaseLayout title="About | Jakub Wajs" description="About Jakub Wajs - .NET Developer">
+<BaseLayout
+	title="About | Jakub Wajs"
+	description="About Jakub Wajs - .NET Developer"
+>
 	<div class="stack gap-20">
 		<main class="wrapper about">
-			<Hero
-				title="About me">
+			<Hero title="About me">
 				<!-- tagline="Thanks for stopping by! Read below to learn more about myself and my background." -->
-				<Picture src={aboutMePhoto} alt="Photo with a man in sunglasses sitting on the bridge, sky in the background." formats={['webp']}/>
+				<Picture
+					src={aboutMePhoto}
+					alt="Photo with a man in sunglasses sitting on the bridge, sky in the background."
+					formats={["webp"]}
+				/>
 			</Hero>
 
 			<section>
-				<h2 class="section-title">Background</h2>
+				<h2 class="section-title">My Journey</h2>
 				<div class="content">
 					<p>
-						My name is Jakub Wajs and I’m 28 y.o. Software Engineer living in Poznan, Poland.
+						My name is Jakub Wajs and I’m 29 y.o. Software Engineer
+						living in Poznan, Poland.
 					</p>
 					<p>
-						My programming journey began in 2015, and since then, I have embarked on numerous projects spanning diverse fields and technologies. From C++, C#, and Python to web application development with Django and ASP .NET, I have explored a wide range of programming languages and frameworks, many of which are showcased in my GitHub repository.
+						My programming journey began in 2015, and since then, I
+						have embarked on numerous projects spanning diverse
+						fields and technologies. From C++, C#, and Python to web
+						application development with Django and ASP .NET, I have
+						explored a wide range of programming languages and
+						frameworks, many of which are showcased in my GitHub
+						repository.
 					</p>
 					<p>
-						During my BSc studies, I primarily focused on developing the PyRy3D Chimera Extension using Python 2.x, which became the subject of my BA thesis. Later, during my Master's Degree, I delved into the realm of cloud data warehouses on the Microsoft Azure platform.
+						During my BSc studies, I primarily focused on developing
+						the PyRy3D Chimera Extension using Python 2.x, which
+						became the subject of my BA thesis. Later, during my
+						Master's Degree, I delved into the realm of cloud data
+						warehouses on the Microsoft Azure platform.
 					</p>
 					<p>
-						In 2019, I earned the MCSA: Web Applications and MCSD: App Builder certifications, demonstrating my expertise in web development. Furthermore, in 2022, I successfully obtained the Azure Developer Associate certification. Currently, I work as a dedicated .NET developer, specializing in CMS-driven solutions utilizing technologies such as Sitecore Experience Platform, Sitecore Content Hub, Kentico Xperience, and Optimizely CMS.
+						In 2019, I earned the MCSA: Web Applications and MCSD:
+						App Builder certifications, demonstrating my expertise
+						in web development. Furthermore, in 2022, I successfully
+						obtained the Azure Developer Associate certification.
+						Currently, I work as a dedicated .NET developer,
+						specializing in CMS-driven solutions utilizing
+						technologies such as Sitecore Experience Platform,
+						Sitecore Content Hub, Kentico Xperience, and Optimizely
+						CMS.
 					</p>
 				</div>
 			</section>
 			<section>
 				<h2 class="section-title">Technology stack</h2>
-				<div class="content">
-					<Grid variant='small'>
-						{
-							technologiesAndSkills.map((skill) => (
-								<li>{skill}</li>
-							))
-						}
-					</Grid>
+				<div class="tags">
+					{technologiesAndSkills.map((skill) => <Pill>{skill}</Pill>)}
 				</div>
 			</section>
 			<section>
@@ -57,18 +87,42 @@ const technologiesAndSkills = ['.NET', 'C#', 'Azure','JIRA', 'GIT', 'SCRUM', 'Az
 				<div class="content">
 					<Grid variant="small">
 						<li class="certificate-item">
-							<a href="https://www.credly.com/badges/51599b8f-b0d1-45ea-bffc-8cc28b84a40e/linked_in_profile">
-								<Picture src={azureDeveloperAssociateBadge} alt="Microsoft Certified: Azure Developer Associate badge" formats={['webp']}/>
+							<a
+								href="https://www.credly.com/badges/51599b8f-b0d1-45ea-bffc-8cc28b84a40e/linked_in_profile"
+							>
+								<Picture
+									src={azureDeveloperAssociateBadge}
+									alt="Microsoft Certified: Azure Developer Associate badge"
+									formats={["webp"]}
+									width={150}
+									height={150}
+								/>
 							</a>
 						</li>
 						<li class="certificate-item">
-							<a href="https://www.credly.com/badges/a860e5de-5e5a-4c17-80d9-805821166a7f/linked_in_profile">
-								<Picture src={appBuilderBadge} alt="Microsoft Certified Solutions Developer badge" formats={['webp']}/>
+							<a
+								href="https://www.credly.com/badges/a860e5de-5e5a-4c17-80d9-805821166a7f/linked_in_profile"
+							>
+								<Picture
+									src={appBuilderBadge}
+									alt="Microsoft Certified Solutions Developer badge"
+									formats={["webp"]}
+									width={150}
+									height={150}
+								/>
 							</a>
 						</li>
 						<li class="certificate-item">
-							<a href="https://www.credly.com/badges/ce4b4c68-59df-405c-89a2-76ec658f2151/linked_in_profile">
-								<Picture src={solutionsAssociateBadge} alt="Microsoft Certified Solutions Associate badge" formats={['webp']}/>
+							<a
+								href="https://www.credly.com/badges/ce4b4c68-59df-405c-89a2-76ec658f2151/linked_in_profile"
+							>
+								<Picture
+									src={solutionsAssociateBadge}
+									alt="Microsoft Certified Solutions Associate badge"
+									formats={["webp"]}
+									width={150}
+									height={150}
+								/>
 							</a>
 						</li>
 					</Grid>
@@ -128,6 +182,12 @@ const technologiesAndSkills = ['.NET', 'C#', 'Azure','JIRA', 'GIT', 'SCRUM', 'Az
 
 	.projects-cta {
 		display: flex;
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem;
 	}
 
 	@media (min-width: 50em) {
