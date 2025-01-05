@@ -8,7 +8,7 @@ import Hero from "../components/Hero.astro";
 import Icon from "../components/Icon.astro";
 import Pill from "../components/Pill.astro";
 import { Picture } from "astro:assets";
-import heroPhoto from "../assets/portrait-2.JPG";
+import heroPhoto from "../assets/portrait-2.jpg";
 
 // Page section components
 import ContactCTA from "../components/ContactCTA.astro";
@@ -84,11 +84,10 @@ import Socials from "../components/Socials.astro";
 	}
 
 	.hero img {
-		aspect-ratio: 5 / 4;
 		object-fit: cover;
 		object-position: top;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
+		border-radius: 1rem;
+		max-height: 45vh;
 	}
 
 	.socials {
@@ -99,7 +98,7 @@ import Socials from "../components/Socials.astro";
 		justify-content: center;
 	}
 
-	@media (min-width: 50em) {
+	@media (min-width: 750px) {
 		.hero {
 			display: grid;
 			grid-template-columns: 6fr 4fr;
@@ -114,9 +113,8 @@ import Socials from "../components/Socials.astro";
 		}
 
 		.hero img {
-			aspect-ratio: 3 / 4;
-			border-radius: 4.5rem;
 			object-fit: cover;
+			max-height: 60vh;
 		}
 
 		.socials {

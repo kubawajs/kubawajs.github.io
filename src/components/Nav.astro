@@ -1,21 +1,26 @@
 ---
-import Icon from './Icon.astro';
-import ThemeToggle from './ThemeToggle.astro';
-import Socials from '../components/Socials.astro';
+import Icon from "./Icon.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+import Socials from "../components/Socials.astro";
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-	{ label: 'Home', href: '/' },
-	{ label: 'Blog', href: '/blog/' },
+	{ label: "Home", href: "/" },
+	{ label: "Blog", href: "/blog/" },
 	// { label: 'Work', href: '/work/' },
-	{ label: 'About', href: '/about/' },
+	{ label: "About", href: "/about/" },
 ];
 ---
 
 <nav>
 	<div class="menu-header">
 		<a href="/" class="site-title" data-astro-prefetch>
-			<Icon icon="terminal-window" color="var(--accent-regular)" size="1.6em" gradient />
+			<Icon
+				icon="terminal-window"
+				color="var(--accent-regular)"
+				size="1.6em"
+				gradient
+			/>
 			wajs-dev.net
 		</a>
 		<menu-button>
@@ -35,14 +40,18 @@ const textLinks: { label: string; href: string }[] = [
 						<a
 							aria-current={Astro.url.pathname === href}
 							class:list={[
-								'link',
+								"link",
 								{
 									active:
 										Astro.url.pathname === href ||
-										(href !== '/' && Astro.url.pathname.startsWith(href)),
+										(href !== "/" &&
+											Astro.url.pathname.startsWith(
+												href,
+											)),
 								},
 							]}
-							href={href} data-astro-prefetch
+							href={href}
+							data-astro-prefetch
 						>
 							{label}
 						</a>
@@ -52,7 +61,7 @@ const textLinks: { label: string; href: string }[] = [
 		</ul>
 		<div class="menu-footer">
 			<div class="socials">
-    			<Socials />
+				<Socials />
 			</div>
 
 			<div class="theme-toggle">
@@ -68,33 +77,37 @@ const textLinks: { label: string; href: string }[] = [
 			super();
 
 			// Inject menu toggle button when JS runs.
-			this.appendChild(this.querySelector('template')!.content.cloneNode(true));
-			const btn = this.querySelector('button')!;
+			this.appendChild(
+				this.querySelector("template")!.content.cloneNode(true),
+			);
+			const btn = this.querySelector("button")!;
 
 			// Hide menu (shown by default to support no-JS browsers).
-			const menu = document.getElementById('menu-content')!;
+			const menu = document.getElementById("menu-content")!;
 			menu.hidden = true;
 
 			/** Set whether the menu is currently expanded or collapsed. */
 			const setExpanded = (expand: boolean) => {
-				btn.setAttribute('aria-expanded', expand ? 'true' : 'false');
+				btn.setAttribute("aria-expanded", expand ? "true" : "false");
 				menu.hidden = !expand;
 			};
 
 			// Toggle menu visibility when the menu button is clicked.
-			btn.addEventListener('click', () => setExpanded(menu.hidden));
+			btn.addEventListener("click", () => setExpanded(menu.hidden));
 
 			// Hide menu button for large screens.
-			const handleViewports = (e: MediaQueryList | MediaQueryListEvent) => {
+			const handleViewports = (
+				e: MediaQueryList | MediaQueryListEvent,
+			) => {
 				setExpanded(e.matches);
 				btn.hidden = e.matches;
 			};
-			const mediaQueries = window.matchMedia('(min-width: 50em)');
+			const mediaQueries = window.matchMedia("(min-width: 50em)");
 			handleViewports(mediaQueries);
-			mediaQueries.addEventListener('change', handleViewports);
+			mediaQueries.addEventListener("change", handleViewports);
 		}
 	}
-	customElements.define('menu-button', MenuButton);
+	customElements.define("menu-button", MenuButton);
 </script>
 
 <style>
@@ -103,7 +116,6 @@ const textLinks: { label: string; href: string }[] = [
 		position: relative;
 		font-family: var(--font-brand);
 		font-weight: 500;
-		margin-bottom: 3.5rem;
 	}
 
 	.menu-header {
@@ -133,7 +145,7 @@ const textLinks: { label: string; href: string }[] = [
 		background: var(--gray-999);
 	}
 
-	.menu-button[aria-expanded='true'] {
+	.menu-button[aria-expanded="true"] {
 		color: var(--gray-0);
 		background: var(--gray-800);
 	}
@@ -145,7 +157,7 @@ const textLinks: { label: string; href: string }[] = [
 	.menu-button::before {
 		position: absolute;
 		inset: -1px;
-		content: '';
+		content: "";
 		background: var(--gradient-stroke);
 		border-radius: 999rem;
 		z-index: -1;
@@ -242,7 +254,7 @@ const textLinks: { label: string; href: string }[] = [
 		.nav-items::before {
 			position: absolute;
 			inset: -1px;
-			content: '';
+			content: "";
 			border-radius: 999rem;
 			z-index: -1;
 		}
@@ -251,7 +263,9 @@ const textLinks: { label: string; href: string }[] = [
 			padding: 0.5rem 1rem;
 			border-radius: 999rem;
 			color: var(--gray-0);
-			transition: color var(--theme-transition), background-color var(--theme-transition);
+			transition:
+				color var(--theme-transition),
+				background-color var(--theme-transition);
 		}
 
 		.link:hover,
