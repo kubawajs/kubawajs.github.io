@@ -1,30 +1,30 @@
 ---
-import { CollectionEntry, getCollection } from 'astro:content';
+import { type CollectionEntry, getCollection, render } from "astro:content";
 
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
-import ContactCTA from '../../components/ContactCTA.astro';
-import Hero from '../../components/Hero.astro';
-import Icon from '../../components/Icon.astro';
-import Pill from '../../components/Pill.astro';
+import ContactCTA from "../../components/ContactCTA.astro";
+import Hero from "../../components/Hero.astro";
+import Icon from "../../components/Icon.astro";
+import Pill from "../../components/Pill.astro";
 
 interface Props {
-	entry: CollectionEntry<'work'>;
+	entry: CollectionEntry<"work">;
 }
 
 // This is a dynamic route that generates a page for every Markdown file in src/content/
 // Read more about dynamic routes and this `getStaticPaths` function in the Astro docs:
 // https://docs.astro.build/en/core-concepts/routing/#dynamic-routes
 export async function getStaticPaths() {
-	const work = await getCollection('work');
+	const work = await getCollection("work");
 	return work.map((entry) => ({
-		params: { slug: entry.slug },
+		params: { slug: entry.id },
 		props: { entry },
 	}));
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.description}>
@@ -32,20 +32,31 @@ const { Content } = await entry.render();
 		<div class="stack gap-15">
 			<header>
 				<div class="wrapper stack gap-2">
-					<a class="back-link" href="/work/" data-astro-prefetch><Icon icon="arrow-left" /> Work</a>
-					<Hero title={entry.data.title} subtitle={entry.data.role} align="start">
+					<a class="back-link" href="/work/" data-astro-prefetch
+						><Icon icon="arrow-left" /> Work</a
+					>
+					<Hero
+						title={entry.data.title}
+						subtitle={entry.data.role}
+						align="start"
+					>
 						<div class="details">
 							<div class="tags">
-								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
+								{
+									entry.data.technologies.map((t) => (
+										<Pill>{t}</Pill>
+									))
+								}
 							</div>
-							<p class="description">{entry.data.description}</p>
+							<p class="description">
+								{entry.data.description}
+							</p>
 						</div>
 					</Hero>
 				</div>
 			</header>
 			<main class="wrapper">
 				<div class="stack gap-10 content">
-					{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
 					<div class="content">
 						<Content />
 					</div>

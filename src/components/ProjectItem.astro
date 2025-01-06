@@ -1,19 +1,18 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import Icon from './Icon.astro';
-import Pill from '../components/Pill.astro';
+import type { CollectionEntry } from "astro:content";
+import Icon from "./Icon.astro";
 
 interface Props {
-	project: CollectionEntry<'work'>;
+	project: CollectionEntry<"work">;
 }
 
-const { data, slug } = Astro.props.project;
+const { data, id } = Astro.props.project;
 ---
 
 <div class="projectCard">
-	<a href={`/work/${slug}`} title={data.title}>
-		<h3 set:html={data.title}></h3>
-		<p set:html={data.description}></p>
+	<a href={`/work/${id}`} title={data.title}>
+		<h3 set:html={data.title} />
+		<p set:html={data.description} />
 		<span class="readMore">Read more <Icon icon="arrow-right" /></span>
 	</a>
 </div>

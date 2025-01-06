@@ -1,14 +1,14 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-import ContactCTA from '../components/ContactCTA.astro';
-import Hero from '../components/Hero.astro';
-import ProjectItem from '../components/ProjectItem.astro';
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+import ProjectItem from "../components/ProjectItem.astro";
 
-const projects = (await getCollection('work')).sort(
-	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+const projects = (await getCollection("work")).sort(
+	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
 );
 ---
 
@@ -20,7 +20,7 @@ const projects = (await getCollection('work')).sort(
 		<main class="wrapper stack gap-8">
 			<Hero
 				title="Work & projects"
-				tagline="See my most recent projects below to get an idea of my past experience."
+				tagline="Explore some of the key projects I’ve contributed to over the years."
 				align="start"
 			/>
 			<ul>

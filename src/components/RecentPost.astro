@@ -1,20 +1,30 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import { Picture } from 'astro:assets';
-import Icon from './Icon.astro';
+import type { CollectionEntry } from "astro:content";
+import { Picture } from "astro:assets";
+import Icon from "./Icon.astro";
 
 interface Props {
-	project: CollectionEntry<'blog'>;
+	project: CollectionEntry<"blog">;
 }
 
-const { data, slug } = Astro.props.project;
+const { data, id } = Astro.props.project;
 ---
 
 <div class="blogCard">
-	<a href={`/blog/${slug}`} title={data.title} data-astro-prefetch>
-		{data.img && <Picture src={data.img} alt={data.img_alt} width={480} height={620} formats={['webp']} />}
-		<h3 set:html={data.title}></h3>
-		<p set:html={data.description}></p>
+	<a href={`/blog/${id}`} title={data.title} data-astro-prefetch>
+		{
+			data.img && (
+				<Picture
+					src={data.img}
+					alt={data.img_alt || ""}
+					width={480}
+					height={620}
+					formats={["webp"]}
+				/>
+			)
+		}
+		<h3 set:html={data.title} />
+		<p set:html={data.description} />
 		<span class="readMore">Read more <Icon icon="arrow-right" /></span>
 	</a>
 </div>
