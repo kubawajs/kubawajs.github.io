@@ -3,23 +3,25 @@ import partytown from "@astrojs/partytown";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
 
+import vercel from '@astrojs/vercel';
+
 const domainUrl = "https://www.wajs-dev.net";
 
 // https://astro.build/config
 export default defineConfig({
   site: domainUrl,
+
   prefetch: {
     defaultStrategy: "viewport"
   },
+
   integrations: [
     partytown({
       config: {
         forward: ["dataLayer.push"],
       },
     }),
-    sitemap({
-      filter: (page) => page.toLowerCase().indexOf(`${domainUrl}/work`) === -1,
-    }),
+    sitemap(),
     robotsTxt({
       sitemap: `${domainUrl}/sitemap-index.xml`,
       policy: [
